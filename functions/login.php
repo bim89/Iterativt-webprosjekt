@@ -50,8 +50,8 @@ if(!empty($_POST))
 
 
         $_SESSION['user'] = $row;
-        header("Location: book.php");
-        die("Redirecting to: book.php");
+        header("Location: /test2/book.php");
+        die("Redirecting to: /test2/book.php");
     }else{
         print("Login Failed Big Time!");
 
