@@ -7,20 +7,42 @@
 	mysql_connect($host, $user, $pass);
 	mysql_select_db($mysql_db);
 
-	if (isset ($_POST['sok'])) {
+	/*if (isset ($_POST['sok'])) {
 		$sok = $_POST['sok'];
-	$sql = "SELECT id, name, plass, status FROM rom where status = 'ledig'";
+	$sql = "SELECT * FROM rom";
 	$res = mysql_query($sql);
 	if (mysql_num_rows($res) > 0){
 	while ($row = mysql_fetch_assoc($res)) {
 		echo  "Rom nummer : " . $row['id']." " ."Navn på Rom: " . $row['name']. " ". "Plass til: ". $row['plass']. " " ."status: ". $row['status']. '<br>';
 	}
 	}
-}
+}*/
 
-echo date("l, jS F Y");
-echo '<br>';
-echo date("h:i a");
+/*$timestamp = date('Y-m-d G:i:s');*/
+if (isset ($_POST['aar'])) {
+    $aar = $_POST['aar'];
+    $mnd = $_POST['mnd'];
+    $dag = $_POST['dag'];
+ 
+    $timestamp = $aar . "-" . $mnd . "-" . $dag . " " ."14:38:10";
+    echo $timestamp;
+
+    
+  $sqlto = "SELECT * FROM bookinger WHERE slutt >= '".$timestamp."'";
+  $resu = mysql_query($sqlto);
+  if (mysql_num_rows($resu) > 0){
+  while ($rows = mysql_fetch_assoc($resu)) {
+    echo  "Rom nummer : " . $rows['id']." " ."Studentnr: " . $rows['studentnr']. " ". "Starttid: ". $rows['start']. " " ."Slutttid: ". $rows['slutt']. '<br>';
+    }
+  }
+}
+//$timestamp = date('Y-m-d G:i:s');
+
+//echo $timestamp;
+
+
+//echo '<br>';
+//echo date("h:i a");
 
 $month = date("n");
 $year = date("Y");
@@ -146,15 +168,36 @@ body{
 </head>
 <body>
 
+
+
 <div id="wrap">
-	<div id="tekst">
+
 	<h1>SØK databasen</h1>
 </div>
-	<div id="loginfelt">
+
+  <div id="søketterrom">
+<form action="Book.php" method="POST">
+    ÅR: <input type="text" name="aar"/>
+   <br/>
+    MND: <input type="text" name="mnd"/>
+    <br/>
+    DAG: <input type="text" name="dag"/>
+     <br/>
+    <input type="submit" value="Søk Etter Rom"/>
+
+    
+	 <!--<div id="loginfelt">
 <form action="Book.php" method="POST">
     Søk: <input type="text" name="sok"/>
     
     <input type="submit" value="Søk"/>
+
+    <div id="loginfelt2">
+    <form action="Book.php" method="POST">
+    Søk: <input type="text" name="sokbook"/>
+    
+    <!--<input type="submit" value="Søk2"/>!-->
+
 </form>
 </div>
 </body>
