@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="a">
+	<head>
+		<meta charset="utf-8">
+		<title>Booking</title>
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="styles/screen.css" media="screen">
+	</head>
+	<body>
+		<header>
+			<nav id="nav">
+				<h3><span>Languages</span></h3>
+				<p class="lang">
+					<select onchange="location = this.options[this.selectedIndex].value;">
+						<option value=>Choose</option>
+						<option value="page-no.html">Norsk</option>
+						<option value="page-en.html">English</option>
+					</select>
+				</p>
+			</nav>
+		</header>
+		<div>   
+			<div id="home">
+				<figure class="image"><figcaption>Need a room to study in?<span>book here!</span></figcaption></figure>
+				<form action="" method="post" class="form">
+					<fieldset>
+						<legend>Book now!</legend>
+						<h3><span>01.</span>What?</h3>
+						<ul class="check">
+							<li><label><input type="radio" id="fcaa" name="fca">Nothing</label></li>
+							<li><label><input type="radio" id="fcab" name="fca">Projector</label></li>
+							<li><label><input type="radio" id="fcac" name="fca">Whiteboard</label></li>
+							<li><label><input type="radio" id="fcaf" name="fca">Alt</label></li>
+						</ul>
+						<h3><span>02.</span>Where?</h3>
+						<p class="select-a">
+							<label for="fcb">Location</label>
+							<select id="fcb" name="fcb">
+								<option>A Wing</option>
+								<option>B Wing</option>
+								<option>C Wing</option>
+							</select>
+						</p>
+						<h3><span>03.</span>When?</h3>
+						<p class="date">
+							<span>
+								<label>Month</label>
+								<select>
+									<option>January</option>
+									<option>February</option>
+									<option>Mars</option>
+									<option>April</option>
+									<option>May</option>
+									<option>June</option>
+									<option>July</option>
+									<option>August</option>
+									<option>September</option>
+									<option>October</option>
+									<option>November</option>
+									<option>December</option>
+								</select>
+							</span>
+							<span>
+								<label for="fcc">Day</label>
+								<select id="fcb" name="fcb">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+									<option>13</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+									<option>17</option>
+									<option>18</option>
+									<option>19</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+									<option>23</option>
+									<option>24</option>
+									<option>25</option>
+									<option>26</option>
+									<option>27</option>
+									<option>28</option>
+									<option>29</option>
+									<option>30</option>
+									<option>31</option>
+							</select>
+							</span>
+							<span>
+								<label for="fcd">Time</label>
+								<select id="fcb" name="fcb">
+									<option>08:00-12:00</option>
+									<option>12:00-16:00</option>
+									<option>16:00-20:00</option>
+								</select>
+							</span>
+						</p>
+						<h3><span>04.</span>Whom?</h3>
+						<p class="select-b">
+							<span>
+								<label for="fce">Number of People</label>
+								<select id="fce" name="fce">
+									<option>02</option>
+									<option>03</option>
+									<option>04</option>
+								</select>
+							</span>
+						</p>
+						<p class="submit"><button type="submit">Find Room</button></p>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
