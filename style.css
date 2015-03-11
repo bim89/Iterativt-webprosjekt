@@ -1,0 +1,83 @@
+body {
+	margin: 0;
+}
+
+header {
+	width: 100%;
+	background-color: #000;
+	height: 70px;
+}
+
+#headTitle {
+	float: left;
+}
+
+#headTitle h1{
+	font-family: "Helvetica neue";
+	font-size:2.5em;
+	color: #fff;
+	margin-top: 15px;
+	margin-left: 80px;
+	margin-bottom: 0;
+	float: left;
+}
+
+#headTitle p {
+	float: left;
+	color: #b7b1b1;
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-size: 1.4em;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+#loginform {
+	float: right;
+}
+
+#loginform form{
+	margin-right: 80px;
+	margin-top: 25px;
+}
+
+#menu {
+	background-color: #d7dad9;
+	height: 70px;
+	width: 100%;
+}
+
+input[type="text"], input[type="password"] {
+	margin-right: 20px;
+	padding: 8px;
+	border-radius: 3px;
+}
+
+
+input[type="submit"]{
+	color: #fff;
+	font-family: "Helvetica Neue";
+	background-color: #409831;
+	border: 2px;
+	border-radius: 1px;
+	border-color: #409831;
+	padding: 6px 20px;
+	font-size: 1.2em
+}
+
+input[type=submit]:hover {
+	background-color: green;	
+}
+
+#content {
+	width: 1523px;
+	margin: 0 auto;
+	height: 100px;
+}
+
+#content h1 {
+	font-family: "Helvetica";
+	font-weight: "bold";
+	font-size: 2em;
+	margin-top: 45px;
+}
+
