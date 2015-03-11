@@ -9,11 +9,11 @@ body{
 	min-height: 100%; 
 	padding-top: 20px; 
 	background: #fff; 
-	font-size: 62.5%; 
+	font-size: 62.5%;
 }
 
 body, select, option, button{
-	color: #235; 
+	color: #000; 
 	font-family: Arial, Helvetica, sans-serif; 
 	line-height: 1.65;
 }
@@ -31,6 +31,14 @@ ul, p{
 	margin-bottom: 16px; 
 }
 
+#logo{
+	display: block; 
+	position: absolute; 
+	left: 120%;
+	bottom: 60%; 
+	z-index: 2; 
+}
+
 #home .form{ 
 	position: absolute; 
 	left: 50%; 
@@ -40,7 +48,7 @@ ul, p{
 	margin-left: -480px; 
 	padding-left: 23px; 
 	padding-right: 23px;  
-	background: #fbfbfb; 
+	background: #fff; 
 }
 
 #nav-b{
@@ -80,10 +88,10 @@ ul, p{
 	display: block; 
 	position: absolute; 
 	right: 50%; 
-	bottom: 50%; 
+	bottom: 100%; 
 	z-index: 2; 
 	margin-right: -365px; 
-	margin-bottom: -230px; 
+	margin-bottom: -500px; 
 	text-align: right; 
 	color: #000;
 }
@@ -121,7 +129,7 @@ ul.check{
 	width: 120%; 
 	margin: 0; 
 	padding: 0 0 2px; 
-	color: #235; 
+	color: #000; 
 }
 
 .check li{ 
@@ -174,10 +182,6 @@ ul.check{
 	position: relative; 
 	margin: 0 0 36px; 
 	padding: 48px 19px 39px; 
-	border: 1px solid #eee; 
-	background: #fbfbfb; 	
-	box-shadow: 10px 10px 10px #e6e6e6; 
-	border-radius: 5px;  
 }
 
 .form legend{ 
@@ -185,7 +189,7 @@ ul.check{
 	position: absolute; 
 	left: 19px; 
 	top: 20px; 
-	color: #235; 
+	color: #000; 
 	font-size: 2em; 
 	font-family: Arial, Helvetica, sans-serif; 
 	font-weight: 700; 
@@ -205,13 +209,13 @@ ul.check{
 	margin: 0px; 
 	padding: 0 0 15px; 
 	border-top: 1px solid #eaeaea; 
-	color: #ff0000; 
+	color: #000; 
 	font-size: 1.3em; 
 	font-weight: 500; 
 }
 
 .form h3 span{ 
-	color: #235; 
+	color: #000; 
 	font-weight: 900; 
 }
 
@@ -231,7 +235,7 @@ ul.check{
 	width: 118px; 
 	height: 28px; 
 	padding: 0; 
-	color: #235;
+	color: #000;
 	border: 1px solid #eee; 
 	background: #fbfbfb; 	
 	box-shadow: 0 0 1px #e6e6e6; 
