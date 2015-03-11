@@ -3,13 +3,11 @@
 <head>
 	<meta charset="UTF8">
 	<title>Roombooking CK32</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
-	<script type="text/javascript"></script>
-
 </head>
 <body>
+
 	<header>
 		<div id="headTitle">
 			<h1>Westerdals</h1>
@@ -24,10 +22,174 @@
 	</header>
 	<section id="menu">
 		
-	</section>
+	</section>	
 	<section id="calender">
 		<div id="content">
-			<h1>Uke 11</h1>	
+				<h1>
+					Uke <span class="weeknumber"></span>
+				</h1>
+				</script>	
+			<table id="cal">
+				<tr>
+					<th>Mandag</th>
+					<th>Tirsdag</th>
+					<th>Onsdag</th>
+					<th>Torsdag</th>
+					<th>Fredag</th>
+					<th>Lørdag</th>
+					<th>Søndag</th>
+				</tr>
+				<tr>
+					<td style="border-left: none;"></td>	
+					<td></td>	
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td class="booked" data-clock="8" data-day="mon" style="background-color: #c48c7f;border-bottom: #c4cc7f;  border-left: none;">
+						<div class="innhold">
+							<h4>Reservert av:</h4>
+							<h5>morbjo14 08:00-10:00</h5>
+						</div>
+					</td>	
+					<td data-week="11"data-clock="8" data-day="tue"></td>
+					<td data-clock="8" data-day="wed"></td>
+					<td data-clock="8" data-day="thu"></td>
+					<td data-clock="8" data-day="fri"></td>
+					<td data-clock="8" data-day="sat"></td>
+					<td data-clock="8" data-day="sun" style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td class="booked" data-clock="9" data-day="mon" style="background-color: #c48c7f; border-bottom: #c4cc7f; border-left: none;"></td>	
+					<td data-clock="9" data-day="tue"></td>
+					<td data-clock="9" data-day="wed"></td>
+					<td data-clock="9" data-day="thu"></td>
+					<td data-clock="9" data-day="fri"></td>
+					<td data-clock="9" data-day="sat"></td>
+					<td data-clock="9" data-day="sun" style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td data-clock="10" data-day="mon" style="border-left: none;"></td>	
+					<td data-clock="10" data-day="tue"></td>
+					<td data-clock="10" data-day="wed"></td>
+					<td data-clock="10" data-day="thu"></td>
+					<td data-clock="10" data-day="fri"></td>
+					<td data-clock="10" data-day="sat"></td>
+					<td data-clock="10" data-day="sun" style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td data-clock="11" data-day="mon" style="border-left: none;"></td>	
+					<td data-clock="11" data-day="tue"></td>
+					<td data-clock="11" data-day="wed"></td>
+					<td data-clock="11" data-day="thu"></td>
+					<td data-clock="11" data-day="fri"></td>
+					<td data-clock="11" data-day="sat"></td>
+					<td data-clock="11" data-day="sun" style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td data-clock="12" data-day="mon" style="border-left: none;"></td>	
+					<td data-clock="12" data-day="tue"></td>
+					<td data-clock="12" data-day="wed"></td>
+					<td data-clock="12" data-day="thu"></td>
+					<td data-clock="12" data-day="fri"></td>
+					<td data-clock="12" data-day="sat"></td>
+					<td data-clock="12" data-day="sun" style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td data-clock="13" data-day="mon" style="border-left: none;"></td>	
+					<td data-clock="13" data-day="tue"></td>
+					<td data-clock="13" data-day="wed"></td>
+					<td data-clock="13" data-day="thu"></td>
+					<td data-clock="13" data-day="fri"></td>
+					<td data-clock="13" data-day="sat"></td>
+					<td data-clock="13" data-day="sun" style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td data-clock="14" data-day="mon" style="border-left: none;"></td>	
+					<td data-clock="14" data-day="tue"></td>
+					<td data-clock="14" data-day="wed"></td>
+					<td data-clock="14" data-day="thu"></td>
+					<td data-clock="14" data-day="fri"></td>
+					<td data-clock="14" data-day="sat"></td>
+					<td data-clock="14" data-day="sun" style="border-right: none;"></td>
+				</tr>
+				<tr>
+					<td class="tdbottom" style="border-left: none;"></td>	
+					<td class="tdbottom"></td>
+					<td class="tdbottom"></td>
+					<td class="tdbottom"></td>
+					<td class="tdbottom"></td>
+					<td class="tdbottom"></td>
+					<td class="tdbottom" style="border-right: none;"></td>
+				</tr>
+			</table>	
+			<div id="tid">
+					<div style="margin-top: 50px" class="timer">
+						<h5>08:00</h5>
+					</div>
+					<div style="margin-top: 54px" class="timer">
+						<h5>09:00</h5>
+					</div>
+					<div style="margin-top: 55px" class="timer">
+						<h5>10:00</h5>
+					</div>
+					<div style="margin-top: 53px" class="timer">
+						<h5>11:00</h5>
+					</div>
+					<div style="margin-top: 55px" class="timer">
+						<h5>12:00</h5>
+					</div>
+					<div style="margin-top: 54px" class="timer">
+						<h5>13:00</h5>
+					</div>
+					<div style="margin-top: 54px" class="timer">
+						<h5>14:00</h5>
+					</div>
+					<div style="margin-top: 55px" class="timer">
+						<h5>15:00</h5>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
+
+	<div id="booking" style="display:none">
+		<h1>Rerserver Rom</h1>
+		<form method="POST" class="reserve">
+		<div class="select">	
+		Fra: 
+		<select name="from">
+			<option class="from" value="8">08:00</option>
+			<option class="from" value="9">09:00</option>
+			<option class="from" value="10">10:00</option>
+			<option class="from" value="11">11:00</option>
+			<option class="from" value="12">12:00</option>
+			<option class="from" value="13">13:00</option>
+			<option class="from" value="14">14:00</option>
+			<option class="from" value="15">15:00</option>
+		</select>
+
+		Til: 
+		<select name="to">
+			<option class="to" value="8">08:00</option>
+			<option class="to" value="9">09:00</option>
+			<option class="to" value="10">10:00</option>
+			<option class="to" value="11">11:00</option>
+			<option class="to" value="12">12:00</option>
+			<option class="to" value="13">13:00</option>
+			<option class="to" value="14">14:00</option>
+			<option class="to" value="15">15:00</option>
+		</select>
+		</div>	
+			<input type="button" class="avbryt" value="Avbryt" />
+			<input type="button" class="reserver" value="Reserver" />
+		</form>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="js/handlebars-v3.0.0.js"></script>
+	<script type="text/javascript"></script>
+	<script src="js/app.js"></script>
 </html>
