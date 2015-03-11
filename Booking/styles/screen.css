@@ -39,12 +39,6 @@ ul, p{
 	z-index: 2; 
 }
 
-#banner{
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
 #home .form{ 
 	position: absolute; 
 	left: 50%; 
