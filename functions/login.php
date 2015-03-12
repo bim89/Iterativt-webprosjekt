@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 require('dbconnect.php');
 
@@ -51,7 +51,7 @@ if(!empty($_POST))
 
         $_SESSION['user'] = $row;
         header("Location: index.php");
-        die("Redirecting to: login.php");
+        die("Redirect failed");
     }else{
         print("Login Failed Big Time!");
 

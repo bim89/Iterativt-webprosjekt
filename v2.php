@@ -1,3 +1,17 @@
+<?php
+	require "functions/dbconnect.php";
+	
+	
+	$sth = $db->prepare("SELECT * FROM room");
+	$sth->execute();
+	
+	$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+	
+	
+	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,15 +34,36 @@
 				<input type="submit" value="Login" />
 			</form>
 	</header>
-	<section id="menu">
+	
+	<div id="menu">
+		<h1>
+			Uke <span class="weeknumber"></span>
+		</h1>
 		
-	</section>	
+		
+		<form method="POST">
+			<h3>Rom nr</h3>
+				<select name="romnr">
+					
+					<?
+					foreach($result as $row) {
+						echo "<option value='" . $row['room_number'] . "'>" . $row['room_number'] . "</option>";
+					}
+					?>
+				</select>
+				
+				<h3>Utstyr</h3>
+				<input type="checkbox" name="prosejktor" value="true"/> Prosjektor
+				<input type="checkbox" name="whiteboard" value="true"/> Whiteboard
+			
+		</form>
+	</div>	
+	
+	<div class="clear"></div>
+
 	<section id="calender">
 		<div id="content">
-				<h1>
-					Uke <span class="weeknumber"></span>
-				</h1>
-				</script>	
+		
 			<table id="cal">
 				<tr>
 					<th>Mandag</th>

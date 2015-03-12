@@ -42,9 +42,16 @@ header {
 }
 
 #menu {
-	background-color: #d7dad9;
-	height: 70px;
-	width: 100%;
+	width: 1523px;
+	margin: 0 auto;
+}
+
+#menu h1 {
+	float: left;
+}
+
+#menu form {
+	float: right;
 }
 
 input[type="text"], input[type="password"] {
@@ -202,5 +209,9 @@ td .innhold h5 {
 }
 
 #mandag {
+}
+
+.clear {
+	clear: both;
 }
 
