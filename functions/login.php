@@ -1,4 +1,4 @@
-	<?php
+<?php
 
 require('dbconnect.php');
 
@@ -28,20 +28,20 @@ if(!empty($_POST))
     $login = false;
 
     $row = $state->fetch();
-    var_dump($row);
+
     if($row){
         $check_pwd = hash('sha256', $_POST['password'] . $row['salt']);
         for($round = 0; $round < 65536; $round++)
         {
             $check_pwd = hash('sha256', $check_pwd . $row['salt']);
         }
-        var_dump($check_pwd);
+
         if($check_pwd === $row['password'])
         {
             $login = true;
         }
     }
-    var_dump($login);
+
     if($login){
 
         unset($row['salt']);
@@ -50,23 +50,11 @@ if(!empty($_POST))
 
 
         $_SESSION['user'] = $row;
-        header("Location: index.php");
-        die("Redirect failed");
+
+
     }else{
         print("Login Failed Big Time!");
 
         $submitted_username = htmlentities($_POST['username'], END_QUOTES, "UTF-8");
     }
 }
-?>
-
-<h1>Login</h1>
-<form action="login.php" method="post">
-    Username:<br />
-    <input type="text" name="username" value="" />
-    <br /><br />
-    Password:<br />
-    <input type="password" name="password" value="" />
-    <br /><br />
-    <input type="submit" value="Login" />
-</form>
