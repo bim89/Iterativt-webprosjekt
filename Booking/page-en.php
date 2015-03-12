@@ -1,3 +1,32 @@
+
+<?php
+  $host = "localhost";
+  $user = "root";
+  $pass = "";
+  $mysql_db = 'rombook';
+
+  mysql_connect($host, $user, $pass);
+  mysql_select_db($mysql_db);
+
+  if (isset ($_POST['month'])) {
+    //$aar = $_POST['aar'];
+    $mnd = $_POST['month'];
+    $dag = $_POST['dag'];
+ 
+    $timestamp = "2014" . "-" . $mnd . "-" . $dag . " " ."14:38:10";
+    echo $timestamp;
+
+    
+  $sqlto = "SELECT * FROM bookinger WHERE slutt >= '".$timestamp."'";
+  $resu = mysql_query($sqlto);
+  if (mysql_num_rows($resu) > 0){
+  while ($rows = mysql_fetch_assoc($resu)) {
+    echo  "Rom nummer : " . $rows['id']." " ."Studentnr: " . $rows['studentnr']. " ". "Starttid: ". $rows['start']. " " ."Slutttid: ". $rows['slutt']. '<br>';
+    }
+}
+}
+?>
+
 <!doctype html>
 
 <html lang="en" class="a">

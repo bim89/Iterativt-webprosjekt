@@ -121,5 +121,4 @@ require('dbconnect.php');
     <input type="password" name="password" value="" />
     <br /><br />
     <input type="submit" value="Register" />
-    <input type="date" />
 </form>
