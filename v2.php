@@ -11,8 +11,6 @@ require "load.php";
 
 	addToJson($result, "room");
 
-	echo $_POST["day"];
-
 	function addToJson($args, $obj = 0) {
 
 

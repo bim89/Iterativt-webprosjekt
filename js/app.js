@@ -50,7 +50,7 @@ $("document").ready(function() {
 				var week = $(elem).attr("data-week");
 				var user = "";
 				
-				var data = {"roomId": roomId, "fromHour": fromHour, "toHour": toHour, "day": day, "week": week, "user": user}
+				var data = {"roomId": roomId, "fromHour": fromHour, "toHour": toHour, "week": week, "user": user}
 				
 				$.ajax({
 					type: "POST",
