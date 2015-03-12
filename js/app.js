@@ -1,5 +1,4 @@
-	$("document").ready(function() {
-
+$("document").ready(function() {
 
 		if ($("#booking").is(":visible")) {
 			$('html').click(function() {
@@ -11,22 +10,28 @@
 		$(".weeknumber").html(weeknumber);	
 		
 		$("#cal").on("click", "td", function(e) {
-			weeknumber = weeknumber + 1;
-			$(".weeknumber").html(weeknumber);	
-			var week = weeknumber;	
-			$("td").each(function() {
+			//weeknumber = weeknumber + 1;
+			//$(".weeknumber").html(weeknumber);	
+			//var week = weeknumber;	
+			//$("td").each(function() {
 					
-				$(this).attr("data-week", week);
-				console.log(this);
-			});
+				//$(this).attr("data-week", week);
+			//});
+			roomBook(this, e);
+		});
+			
+		
+		function roomBook(elem, e) {
+			$(".innhold h4", elem).html("");
+			$(".innhold h5", elem).html("");	
 
 			changeBg();
 
-			console.log(this);
-			if($(this).hasClass("booked") == false) {
-			$(this).css("background-color", "#e8e8e8");
+			
+			if($(elem).hasClass("booked") == false) {
+			$(elem).css("background-color", "#e8e8e8");
 
-			var hour = $(this).data("clock");
+			var hour = $(elem).data("clock");
 			$("[name=from]").val(hour);
 			$("[name=to]").val(hour + 2);
 			
@@ -39,8 +44,11 @@
 				'top' : relY,
 				'left' : relX + 10
 			});
+			
+			$(".reserver").click(function(elem) {
+					
+			});
 				
-			var elem = this;
 			$(".avbryt").click(function(elem) {
 				$("#booking").hide();
 				changeBg();
@@ -51,8 +59,9 @@
 				});
 			}
 
-			});
-
+			
+		}
+		
 		function changeBg()  {
 
 			$("td").each(function() {
