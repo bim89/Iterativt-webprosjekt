@@ -218,4 +218,8 @@ td .innhold h5 {
 .clear {
 	clear: both;
 }
+#loginMessage {
+    float: right;
+    color: #ffffff;
+}
 

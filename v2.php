@@ -1,15 +1,14 @@
 <?php
-	require "functions/dbconnect.php";
-	
-	
+
+require "functions/dbconnect.php";
+require "functions/login.php";
+
+
 	$sth = $db->prepare("SELECT * FROM room");
 	$sth->execute();
 	
 	$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-	
-	
-	
 ?>
 
 <!DOCTYPE html>
@@ -27,14 +26,27 @@
 			<h1>Westerdals</h1>
 			<p>Roombooking – CK32</p>
 		</div>
+        <div id="loginMessage">
+            <h3>
+        <?php
+        if(isset($_SESSION['user'])) {
+
+        echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
+            echo "</h3>";
+     }else{
+     ?>
+
+        </div>
 		<div id="loginform">
-			<form method="post" action="index.php">
-				<input type="text" placeholder="E-mail" name="username" />
+			<form method="post" action="v2.php">
+				<input type="text" placeholder="Brukernavn" name="username" />
 				<input type="password" placeholder="Passord" name="password" />
 				<input type="submit" value="Login" />
 			</form>
 	</header>
-	
+
+    <?} ?>
+
 	<div id="menu">
 		<h1>
 			Uke <span class="weeknumber"></span>
