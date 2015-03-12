@@ -22,6 +22,9 @@ $("document").ready(function() {
 			
 		
 		function roomBook(elem, e) {
+			
+			console.log(elem)
+			
 			$(".innhold h4", elem).html("");
 			$(".innhold h5", elem).html("");	
 

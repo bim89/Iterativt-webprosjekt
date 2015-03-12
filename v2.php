@@ -42,6 +42,7 @@
 		
 		
 		<form method="POST">
+			<div class="checkBooking">
 			<h3>Rom nr</h3>
 				<select name="romnr">
 					
@@ -55,7 +56,7 @@
 				<h3>Utstyr</h3>
 				<input type="checkbox" name="prosejktor" value="true"/> Prosjektor
 				<input type="checkbox" name="whiteboard" value="true"/> Whiteboard
-			
+		<div class="checkBooking">
 		</form>
 	</div>	
 	
