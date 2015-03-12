@@ -1,5 +1,25 @@
 $("document").ready(function() {
-
+	
+	var json = (function () {
+	    var json = null;
+	    $.ajax({
+	        'async': false,
+	        'global': false,
+	        'url': "data.json",
+	        'dataType': "json",
+	        'success': function (data) {
+	            json = data;
+	        }
+	    });
+	    return json;
+	})(); 
+	
+	var rooms = json.room;
+	
+	rooms.forEach(function(room) {
+		console.log(room["id"]);
+	});
+		
 		if ($("#booking").is(":visible")) {
 			$('html').click(function() {
 				$("#booking").hide();
@@ -18,6 +38,34 @@ $("document").ready(function() {
 				//$(this).attr("data-week", week);
 			//});
 			roomBook(this, e);
+			
+			var elem = this;
+			console.log(elem);
+			$(".reserver").on("click", function(e) {
+				console.log(elem);
+				var roomId = 1;
+				var fromHour = $("select[name='from']").val();
+				var toHour = $("select[name='to']").val();
+				var day = $(elem).attr("data-day");
+				var week = $(elem).attr("data-week");
+				var user = "";
+				
+				var data = {"roomId": roomId, "fromHour": fromHour, "toHour": toHour, "week": week, "user": user}
+				
+				$.ajax({
+					type: "POST",
+					url: "v2.php",
+					data: data,
+					success: function(data) {
+						$("#booking").hide();
+						console.log(data);
+					}
+				})
+				
+				console.log(roomId, fromHour, toHour,day, week, user);
+				
+			});
+			
 		});
 			
 		
