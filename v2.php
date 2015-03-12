@@ -27,7 +27,7 @@ require "functions/login.php";
 			<p>Roombooking – CK32</p>
 		</div>
         <div id="loginMessage">
-            <h3>
+            <p>Velkommen 
         <?php
         if(isset($_SESSION['user'])) {
 
@@ -35,7 +35,7 @@ require "functions/login.php";
             echo "</h3>";
      }else{
      ?>
-
+	 	</p>
         </div>
 		<div id="loginform">
 			<form method="post" action="v2.php">
@@ -43,18 +43,19 @@ require "functions/login.php";
 				<input type="password" placeholder="Passord" name="password" />
 				<input type="submit" value="Login" />
 			</form>
-	</header>
 
+	
     <?} ?>
-
+	</header>
+	<div class="clear"></div>
 	<div id="menu">
 		<h1>
 			Uke <span class="weeknumber"></span>
 		</h1>
 		
-		
+		<div class="checkBooking">
 		<form method="POST">
-			<div class="checkBooking">
+			<div id="romnr">
 			<h3>Rom nr</h3>
 				<select name="romnr">
 					
@@ -64,12 +65,14 @@ require "functions/login.php";
 					}
 					?>
 				</select>
-				
+			</div>
+			<div id="utstyr">
 				<h3>Utstyr</h3>
 				<input type="checkbox" name="prosejktor" value="true"/> Prosjektor
 				<input type="checkbox" name="whiteboard" value="true"/> Whiteboard
-		<div class="checkBooking">
-		</form>
+			</div>
+			</form>
+		</div>
 	</div>	
 	
 	<div class="clear"></div>

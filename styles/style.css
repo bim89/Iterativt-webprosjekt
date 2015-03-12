@@ -42,8 +42,9 @@ header {
 }
 
 #menu {
+	margin-top: 50px;
 	width: 1523px;
-	margin: 0 auto;
+	margin: 50px auto;
 }
 
 #menu h1 {
@@ -96,6 +97,10 @@ input[type="button"]{
 
 input[type=submit]:hover {
 	background-color: green;	
+}
+
+#calender {
+	margin-top: 30px;
 }
 
 #content {
@@ -160,7 +165,6 @@ td {
 }
 
 .checkBooking {
-	
 }
 
 td .innhold h4  {
@@ -220,6 +224,20 @@ td .innhold h5 {
 }
 #loginMessage {
     float: right;
-    color: #ffffff;
+	margin-right: 80px;
+	color: #b7b1b1;
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-size: 1.4em;
+	font-weight: 100;
+	margin-top: 10px;
+}
+
+#romnr {
+	float: left;
+	margin-right: 40px;
+}
+
+#utstyr {
+	float: left;
 }
 
