@@ -8,12 +8,12 @@ require "load.php";
 	
 	$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    if(isset($_POST["fromHour"]))
+    if(isset($_POST["fromHour"])) {
         addBook($_POST['roomId'], $_POST['fromHour'], $_POST['toHour'], $_POST['day'], $_POST['week'], $db);
-
+	}
+	
+	
 	addToJson($result, "room");
-
-	echo $_POST["day"];
 
 	function addToJson($args, $obj = 0) {
 

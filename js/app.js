@@ -15,6 +15,7 @@ $("document").ready(function() {
 	})(); 
 	
 	var rooms = json.room;
+	var bookings = json.Booking;
 	
 	rooms.forEach(function(room) {
 		console.log(room["id"]);
@@ -48,9 +49,8 @@ $("document").ready(function() {
 				var toHour = $("select[name='to']").val();
 				var day = $(elem).attr("data-day");
 				var week = $(elem).attr("data-week");
-				var user = "";
 				
-				var data = {"roomId": roomId, "fromHour": fromHour, "toHour": toHour, "day": day, "week": week, "user": user}
+				var data = {"roomId": roomId, "fromHour": fromHour, "toHour": toHour, "day": day, "week": week}
 				
 				$.ajax({
 					type: "POST",

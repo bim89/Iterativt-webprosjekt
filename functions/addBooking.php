@@ -24,4 +24,10 @@
 
         $stmt->execute();
 
+		$stmt = $db->prepare("SELECT * FROM Booking");
+		$stmt->execute();
+		
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		addToJson($result, "Booking");
 }
