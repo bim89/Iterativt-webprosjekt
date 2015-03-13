@@ -17,9 +17,8 @@ $("document").ready(function() {
 	var rooms = json.room;
 	var bookings = json.Booking;
 	
-	rooms.forEach(function(room) {
-		console.log(room["id"]);
-	});
+	getBookings(bookings);
+	
 		
 		if ($("#booking").is(":visible")) {
 			$('html').click(function() {
@@ -59,6 +58,7 @@ $("document").ready(function() {
 					success: function(data) {
 						$("#booking").hide();
 						console.log(data);
+						getBookings(bookings);
 					}
 				})
 				
@@ -121,5 +121,43 @@ $("document").ready(function() {
 				}
 			});
 		}
+		
+		function getBookings(bookings) {
+			
+			$("td").each(function() {
+				var week = $(this).attr("data-week"),
+					day = $(this).attr("data-day"),
+					fromHour = $(this).attr("data-clock");
+					td = this;
+					
+					bookings.forEach(function(book) {
+						console.log(book["start_time"] + ": " + fromHour + " day: " + book["weekday"]+ " " + day)
+						if(book["week"] == week && book["weekday"] == day) {
+							if(book["start_time"] == fromHour) {
+								console.log(td);
+								$(td).css({
+									"background-color": "#c48c7f",
+									"border-bottom": "#c48c7f",
+								});
+								$(td).addClass("booked");
+								$(".innhold", td).show
+								$(".innhold h4", td).html("Reservert av:");
+								$(".innhold h5", td).html(book["user_id"] + " " + book["start_time"] + "-" + book["stop_time"]);	
+								
+							}
+							
+							else if (book["start_time"] > fromHour && fromHour <= book["stop_time"]) {
+								$(td).css({
+									"background-color": "#c48c7f",
+									"border-bottom": "#c48c7f",
+								});
+								$(td).addClass("booked");
+							}
+						}
+					});
+					
+			});
+		}
+		
 
 		});
