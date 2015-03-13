@@ -8,8 +8,12 @@ require "load.php";
 	
 	$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
+    if(isset($_POST["fromHour"]))
+        addBook($_POST['roomId'], $_POST['fromHour'], $_POST['toHour'], $_POST['day'], $_POST['week'], $db);
 
 	addToJson($result, "room");
+
+	echo $_POST["day"];
 
 	function addToJson($args, $obj = 0) {
 
@@ -25,10 +29,7 @@ require "load.php";
 
 		file_put_contents("data.json", json_encode($data, true));
 
-
-
 	}
-
 ?>
 
 <!DOCTYPE html>
