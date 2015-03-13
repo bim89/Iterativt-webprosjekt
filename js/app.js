@@ -131,7 +131,7 @@ $("document").ready(function() {
 					td = this;
 					
 					bookings.forEach(function(book) {
-						console.log(book["start_time"] + ": " + fromHour + " day: " + book["weekday"]+ " " + day)
+						console.log(book);
 						if(book["week"] == week && book["weekday"] == day) {
 							if(book["start_time"] == fromHour) {
 								console.log(td);
@@ -146,7 +146,7 @@ $("document").ready(function() {
 								
 							}
 							
-							else if (book["start_time"] > fromHour && fromHour <= book["stop_time"]) {
+							else if (book["start_time"] > fromHour && fromHour < book["stop_time"]) {
 								$(td).css({
 									"background-color": "#c48c7f",
 									"border-bottom": "#c48c7f",
