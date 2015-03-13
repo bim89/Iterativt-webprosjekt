@@ -4,7 +4,7 @@ require('dbconnect.php');
 
 $entred_username = '';
 
-if(!empty($_POST))
+if(!empty($_POST["username"]) && !empty($_POST["password"]))
 {
     $sqlquery =
         "SELECT
@@ -55,6 +55,5 @@ if(!empty($_POST))
     }else{
         print("Login Failed Big Time!");
 
-        $submitted_username = htmlentities($_POST['username'], END_QUOTES, "UTF-8");
     }
 }

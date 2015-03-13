@@ -2,14 +2,16 @@
 
 require "load.php";
 
-
+	session_start();
 	$sth = $db->prepare("SELECT * FROM room ORDER BY room_number");
 	$sth->execute();
 	
 	$result = $sth->fetchAll(PDO::FETCH_ASSOC);
+	
+	var_dump($_SESSION['user']);
 
-    if(isset($_POST["fromHour"])) {
-        addBook($_POST['roomId'], $_POST['fromHour'], $_POST['toHour'], $_POST['day'], $_POST['week'], $db);
+    if(isset($_POST["fromHour"]) && !empty($_SESSION['user'])) {
+        addBook($_POST['roomId'], $_POST['fromHour'], $_POST['toHour'], $_POST['day'], $_POST['week'], $_SESSION["user"]["id"]);
 	}
 	
 	
