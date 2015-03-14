@@ -40,9 +40,9 @@ $("document").ready(function() {
 			roomBook(this, e);
 			
 			var elem = this;
-			console.log(elem);
+
 			$(".reserver").on("click", function(e) {
-				console.log(elem);
+
 				var roomId = 1;
 				var fromHour = $("select[name='from']").val();
 				var toHour = $("select[name='to']").val();
@@ -57,8 +57,7 @@ $("document").ready(function() {
 					data: data,
 					success: function(data) {
 						$("#booking").hide();
-						console.log(data);
-						getBookings(bookings);
+						
 					}
 				})
 				
@@ -94,10 +93,6 @@ $("document").ready(function() {
 				'left' : relX + 10
 			});
 			
-			$(".reserver").click(function(elem) {
-					
-			});
-				
 			$(".avbryt").click(function(elem) {
 				$("#booking").hide();
 				changeBg();
@@ -121,8 +116,7 @@ $("document").ready(function() {
 		}
 		
 		function getBookings(bookings) {
-			
-			var count = 0;
+
 			
 			$("td").each(function() {
 				var week = $(this).attr("data-week"),
@@ -134,30 +128,32 @@ $("document").ready(function() {
 
 						if (book["week"] == week && book["weekday"] == day) {
 							// console.log(book["start_time"] + " " + clock);
+							
 							if(book["start_time"] == clock) {
+								console.log(book["weekday"])
 								$(td).css({
-									"background-color": "#c48c7f",
-									"border-bottom": "#c48c7f",
 								});
-								count++;
 	
 								$(td).addClass("booked");
-								$(".innhold", td).show
+								$(".innhold", td).addClass("addBgTop").show();
 								$(".innhold h4", td).html("Reservert av:");
 								$(".innhold h5", td).html(book["user_id"] + " " + book["start_time"] + "-" + book["stop_time"]);
 								
 								clock++;
 								
 								while(clock < book["stop_time"]) {
+									if (clock == book["stop_time"] - 1) {
+										var tcell = $("td[data-week='" + book["week"] + "'][data-day='" + book["weekday"] + "'][data-clock='" + clock + "']");
+										$(tcell).addClass("booked");
 									
+										$(".innhold", tcell).addClass("addBgBottom").show();
+									} else {
+										
 									var tcell = $("td[data-week='" + book["week"] + "'][data-day='" + book["weekday"] + "'][data-clock='" + clock + "']");
-									$(tcell).css({
-									"background-color": "#c48c7f",
-									"border-bottom": "#c48c7f",
-									});
 									$(tcell).addClass("booked");
 									
-	
+									$(".innhold", tcell).addClass("addBgBetween").show();
+									}
 									clock++;
 								}	
 								
