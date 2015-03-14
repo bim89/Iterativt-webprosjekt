@@ -72,9 +72,7 @@ $("document").ready(function() {
 		function roomBook(elem, e) {
 			
 			console.log(elem)
-			
-			$(".innhold h4", elem).html("");
-			$(".innhold h5", elem).html("");	
+	
 
 			changeBg();
 
@@ -124,35 +122,47 @@ $("document").ready(function() {
 		
 		function getBookings(bookings) {
 			
+			var count = 0;
+			
 			$("td").each(function() {
 				var week = $(this).attr("data-week"),
 					day = $(this).attr("data-day"),
-					fromHour = $(this).attr("data-clock");
+					clock = $(this).attr("data-clock"),
 					td = this;
 					
 					bookings.forEach(function(book) {
-						console.log(book);
-						if(book["week"] == week && book["weekday"] == day) {
-							if(book["start_time"] == fromHour) {
-								console.log(td);
+
+						if (book["week"] == week && book["weekday"] == day) {
+							// console.log(book["start_time"] + " " + clock);
+							if(book["start_time"] == clock) {
 								$(td).css({
 									"background-color": "#c48c7f",
 									"border-bottom": "#c48c7f",
 								});
+								count++;
+	
 								$(td).addClass("booked");
 								$(".innhold", td).show
 								$(".innhold h4", td).html("Reservert av:");
-								$(".innhold h5", td).html(book["user_id"] + " " + book["start_time"] + "-" + book["stop_time"]);	
+								$(".innhold h5", td).html(book["user_id"] + " " + book["start_time"] + "-" + book["stop_time"]);
+								
+								clock++;
+								
+								while(clock < book["stop_time"]) {
+									
+									var tcell = $("td[data-week='" + book["week"] + "'][data-day='" + book["weekday"] + "'][data-clock='" + clock + "']");
+									$(tcell).css({
+									"background-color": "#c48c7f",
+									"border-bottom": "#c48c7f",
+									});
+									$(tcell).addClass("booked");
+									
+	
+									clock++;
+								}	
 								
 							}
 							
-							else if (book["start_time"] > fromHour && fromHour < book["stop_time"]) {
-								$(td).css({
-									"background-color": "#c48c7f",
-									"border-bottom": "#c48c7f",
-								});
-								$(td).addClass("booked");
-							}
 						}
 					});
 					

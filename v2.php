@@ -122,10 +122,10 @@ require "load.php";
 					<td style="border-right: none;"></td>
 				</tr>
 				<tr>
-					<td class="booked" data-clock="8" data-day="mon" style="background-color: #c48c7f;border-bottom: #c4cc7f;  border-left: none;">
+					<td data-week="11" data-clock="8" data-day="mon" style="border-left: none;">
 						<div class="innhold">
-							<h4>Reservert av:</h4>
-							<h5>morbjo14 - 08:00-10:00</h5>
+							<h4></h4>
+							<h5></h5>
 						</div>
 					</td>	
 					<td data-week="11" data-clock="8" data-day="tue">
@@ -167,11 +167,18 @@ require "load.php";
 					</td>
 				</tr>
 				<tr>
-					<td class="booked" data-clock="9" data-day="mon" style="background-color: #c48c7f; border-bottom: #c4cc7f; border-left: none;"></td>	
-					<td data-week="11" data-clock="9" data-day="tue"><div class="innhold">
+					<td data-week="11" data-clock="9" data-day="mon" style="border-left: none;">
+						<div class="innhold">
 							<h4></h4>
 							<h5></h5>
-						</div></td>
+						</div>
+					</td>	
+					<td data-week="11" data-clock="9" data-day="tue">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
 					<td data-week="11" data-clock="9" data-day="wed">
 						<div class="innhold">
 							<h4></h4>
@@ -190,53 +197,238 @@ require "load.php";
 							<h5></h5>
 						</div>
 					</td>
-					<td data-week="11" data-clock="9" data-day="sat"></td>
-					<td data-week="11" data-clock="9" data-day="sun" style="border-right: none;"></td>
+					<td data-week="11" data-clock="9" data-day="sat">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="9" data-day="sun" style="border-right: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
 				</tr>
 				<tr>
-					<td data-week="11" data-clock="10" data-day="mon" style="border-left: none;"></td>	
-					<td data-week="11" data-clock="10" data-day="tue"></td>
-					<td data-week="11" data-clock="10" data-day="wed"></td>
-					<td data-week="11" data-clock="10" data-day="thu"></td>
-					<td data-week="11" data-clock="10" data-day="fri"></td>
-					<td data-week="11" data-clock="10" data-day="sat"></td>
-					<td data-week="11" data-clock="10" data-day="sun" style="border-right: none;"></td>
+					<td data-week="11" data-clock="10" data-day="mon" style="border-left: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>	
+					<td data-week="11" data-clock="10" data-day="tue">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="10" data-day="wed">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="10" data-day="thu">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="10" data-day="fri">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="10" data-day="sat">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="10" data-day="sun" style="border-right: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
 				</tr>
 				<tr>
-					<td data-week="11" data-clock="11" data-day="mon" style="border-left: none;"></td>	
-					<td data-week="11" data-clock="11" data-day="tue"></td>
-					<td data-week="11" data-clock="11" data-day="wed"></td>
-					<td data-week="11" data-clock="11" data-day="thu"></td>
-					<td data-week="11" data-clock="11" data-day="fri"></td>
-					<td data-week="11" data-clock="11" data-day="sat"></td>
-					<td data-week="11" data-clock="11" data-day="sun" style="border-right: none;"></td>
+					<td data-week="11" data-clock="11" data-day="mon" style="border-left: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>	
+					<td data-week="11" data-clock="11" data-day="tue">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="11" data-day="wed">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="11" data-day="thu">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="11" data-day="fri">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="11" data-day="sat">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="11" data-day="sun" style="border-right: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
 				</tr>
 				<tr>
-					<td data-week="11" data-clock="12" data-day="mon" style="border-left: none;"></td>	
-					<td data-week="11" data-clock="12" data-day="tue"></td>
-					<td data-week="11" data-clock="12" data-day="wed"></td>
-					<td data-week="11" data-clock="12" data-day="thu"></td>
-					<td data-week="11" data-clock="12" data-day="fri"></td>
-					<td data-week="11" data-clock="12" data-day="sat"></td>
-					<td data-week="11" data-clock="12" data-day="sun" style="border-right: none;"></td>
+					<td data-week="11" data-clock="12" data-day="mon" style="border-left: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>	
+					<td data-week="11" data-clock="12" data-day="tue">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="12" data-day="wed">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="12" data-day="thu">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="12" data-day="fri">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="12" data-day="sat">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="12" data-day="sun" style="border-right: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
 				</tr>
 				<tr>
-					<td data-week="11" data-clock="13" data-day="mon" style="border-left: none;"></td>	
-					<td data-week="11" data-clock="13" data-day="tue"></td>
-					<td data-week="11" data-clock="13" data-day="wed"></td>
-					<td data-week="11" data-clock="13" data-day="thu"></td>
-					<td data-week="11" data-clock="13" data-day="fri"></td>
-					<td data-week="11" data-clock="13" data-day="sat"></td>
-					<td data-week="11" data-clock="13" data-day="sun" style="border-right: none;"></td>
+					<td data-week="11" data-clock="13" data-day="mon" style="border-left: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>	
+					<td data-week="11" data-clock="13" data-day="tue">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="13" data-day="wed">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="13" data-day="thu">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="13" data-day="fri">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="13" data-day="sat">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="13" data-day="sun" style="border-right: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
 				</tr>
 				<tr>
-					<td data-week="11" data-clock="14" data-day="mon" style="border-left: none;"></td>	
-					<td data-week="11" data-clock="14" data-day="tue"></td>
-					<td data-week="11" data-clock="14" data-day="wed"></td>
-					<td data-week="11" data-clock="14" data-day="thu"></td>
-					<td data-week="11" data-clock="14" data-day="fri"></td>
-					<td data-week="11" data-clock="14" data-day="sat"></td>
-					<td data-week="11" data-clock="14" data-day="sun" style="border-right: none;"></td>
+					<td data-week="11" data-clock="14" data-day="mon" style="border-left: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>	
+					<td data-week="11" data-clock="14" data-day="tue">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="14" data-day="wed">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="14" data-day="thu">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="14" data-day="fri">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="14" data-day="sat">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
+					<td data-week="11" data-clock="14" data-day="sun" style="border-right: none;">
+						<div class="innhold">
+							<h4></h4>
+							<h5></h5>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<td class="tdbottom" style="border-left: none;"></td>	
