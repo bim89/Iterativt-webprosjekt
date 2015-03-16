@@ -49,22 +49,36 @@ require "load.php";
 			<h1>Westerdals</h1>
 			<p>Roombooking – CK32</p>
 		</div>
-        <div id="loginMessage">
-            <p>
+
         <?php
         if (isset($_SESSION['user'])) {
 		echo "Vellkommen ";
         echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
-            echo "</h3>";
+          ?>
+            <div id="loginMessage">
+                <p>
+            <form method="post" action="v2.php">
+                <input type="hidden" value="" name="username" />
+                <input type="hidden" value="logout" name="logout" />
+                <input type="submit" value="Logout"/>
+                <?php
+                if(isset($_POST['logout'])) {
+                    unset($_SESSION['user']);
+                    header("Location: v2.php");
+                }
+                ?>
+            </form>
+            </p>
+        </div>
+        <?php
      } else {
      ?>
-	 	</p>
-        </div>
-		<div id="loginform">
+
+        <div id="loginform">
 			<form method="post" action="v2.php">
 				<input type="text" placeholder="Brukernavn" name="username" />
 				<input type="password" placeholder="Passord" name="password" />
-				<input type="submit" value="Login" />
+                <input type="submit" value="Login" />
 			</form>
 
 	
