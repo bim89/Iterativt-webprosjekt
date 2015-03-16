@@ -52,11 +52,11 @@ require "load.php";
         <div id="loginMessage">
             <p>
         <?php
-        if(isset($_SESSION['user'])) {
+        if (isset($_SESSION['user'])) {
 		echo "Vellkommen ";
         echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
             echo "</h3>";
-     }else{
+     } else {
      ?>
 	 	</p>
         </div>
@@ -68,7 +68,7 @@ require "load.php";
 			</form>
 
 	
-    <?} ?>
+    <?php } ?>
 	</header>
 	<div class="clear"></div>
 	<div id="menu">
