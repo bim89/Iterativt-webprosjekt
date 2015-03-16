@@ -31,6 +31,16 @@ $("document").ready(function() {
 		var weeknumber = 11;
 		$(".weeknumber").html(weeknumber);	
 		
+		$("#findRoom").click(function() {
+			var prosjektor = $("input[name$='prosejktor']").val(),
+				whiteboard = $("input[name$='whiteboard']").val(),
+				antPersoner = $("select[name$='personer']").val(),
+				etasje = $("select[name$='etasje']").val(),
+				rom = $("select[name$='romnr']").val()
+			
+			console.log(prosjektor + " " + whiteboard + " " + antPersoner + " " + etasje + " " + rom);
+		});
+		
 		$("#cal").on("click", "td", function(e) {
 			//weeknumber = weeknumber + 1;
 			//$(".weeknumber").html(weeknumber);	
