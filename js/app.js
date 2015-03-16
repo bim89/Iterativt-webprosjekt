@@ -1,6 +1,6 @@
 $("document").ready(function() {
 	
-	var json = (function () {
+	var jsonData = function () {
 	    var json = null;
 	    $.ajax({
 	        'async': false,
@@ -12,7 +12,9 @@ $("document").ready(function() {
 	        }
 	    });
 	    return json;
-	})(); 
+	} 
+	
+	var json = jsonData();
 	
 	var rooms = json.room;
 	var bookings = json.Booking;
@@ -40,9 +42,10 @@ $("document").ready(function() {
 			roomBook(this, e);
 			
 			var elem = this;
-
+			console.log(elem);
+			
 			$(".reserver").on("click", function(e) {
-
+				
 				var roomId = 1;
 				var fromHour = $("select[name='from']").val();
 				var toHour = $("select[name='to']").val();
@@ -57,11 +60,15 @@ $("document").ready(function() {
 					data: data,
 					success: function(data) {
 						$("#booking").hide();
-						
+						var book = jsonData();
+						console.log(book.Booking);
+						$(elem).css("background-color", "#fff");
+						getBookings(book.Booking);
+						elem = "";
 					}
 				})
 				
-				console.log(roomId, fromHour, toHour,day, week, user);
+				console.log(roomId, fromHour, toHour,day, week);
 				
 			});
 			
@@ -130,14 +137,14 @@ $("document").ready(function() {
 							// console.log(book["start_time"] + " " + clock);
 							
 							if(book["start_time"] == clock) {
-								console.log(book["weekday"])
-								$(td).css({
-								});
-	
-								$(td).addClass("booked");
-								$(".innhold", td).addClass("addBgTop").show();
-								$(".innhold h4", td).html("Reservert av:");
-								$(".innhold h5", td).html(book["user_id"] + " " + book["start_time"] + "-" + book["stop_time"]);
+								console.log(book["weekday"]);
+								if (!$(td).hasClass("booked")) {
+									$(td).addClass("booked");
+									$(".innhold", td).addClass("addBgTop").show();
+									$(".innhold h4", td).html("Reservert av:");
+									console.log($(".innhold h4", td));
+									$(".innhold h5", td).html(book["user_id"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
+								}
 								
 								clock++;
 								
@@ -149,10 +156,10 @@ $("document").ready(function() {
 										$(".innhold", tcell).addClass("addBgBottom").show();
 									} else {
 										
-									var tcell = $("td[data-week='" + book["week"] + "'][data-day='" + book["weekday"] + "'][data-clock='" + clock + "']");
-									$(tcell).addClass("booked");
+										var tcell = $("td[data-week='" + book["week"] + "'][data-day='" + book["weekday"] + "'][data-clock='" + clock + "']");
+										$(tcell).addClass("booked");
 									
-									$(".innhold", tcell).addClass("addBgBetween").show();
+										$(".innhold", tcell).addClass("addBgBetween").show();
 									}
 									clock++;
 								}	

@@ -1,8 +1,7 @@
 <?php
 
-require('dbconnect.php');
 
-$entred_username = '';
+
 
 if(!empty($_POST["username"]) && !empty($_POST["password"]))
 {
@@ -43,13 +42,14 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
     }
 
     if($login){
-
+		
         unset($row['salt']);
         unset($row['password']);
 
 
 
         $_SESSION['user'] = $row;
+		
 
 
     }else{

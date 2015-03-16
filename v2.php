@@ -1,8 +1,8 @@
 <?php
 
+session_start();
 require "load.php";
 
-	session_start();
 	$sth = $db->prepare("SELECT * FROM room ORDER BY room_number");
 	$sth->execute();
 	
@@ -38,6 +38,7 @@ require "load.php";
 <head>
 	<meta charset="UTF8">
 	<title>Roombooking CK32</title>
+
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
@@ -80,10 +81,10 @@ require "load.php";
 			<div id="romnr">
 			<h3>Rom nr</h3>
 				<select name="romnr">
-					
+					<option>Velg Rom</option>
 					<?
 					foreach($result as $row) {
-						echo "<option value='" . $row['room_number'] . "'>" . $row['room_number'] . "</option>";
+						echo "<option value='" . $row['room_number'] . "'>Rom " . $row['room_number'] . "</option>";
 					}
 					?>
 				</select>

@@ -1,3 +1,8 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	margin: 0;
 	font-family: "Helvetica";
@@ -168,41 +173,66 @@ td {
 .addBgTop {
 	background-color: #a0e0f9;
 	width: 100%;
-	height: 100%;
+	height: 67px;
 	opacity: 0.75;
+	margin-top: -6px;
+	padding-top: 2px;
 	margin-left: -2px;
-	margin-bottom: -3px;
+	margin-bottom: -13px;
 	border-radius: 5px 5px 0px 0px;
 	border: 2px solid #4496b6;
 	border-bottom: none;
 }
 
+
 .addBgBetween {
 	background-color: #a0e0f9;
 	border: 2px solid #4496b6;
 	margin-left: -2px;
-	margin-top: -5px;
+	margin-top: 0px;
 	padding-top: 2px;
 	width: 100%;
-	height: 100%;
+	height: 65px;
 	opacity: 0.75;
-	margin-bottom: -8px;
+	margin-bottom: -11px;
 	border-top: none;
 	border-bottom: none;
 }
 
+
+
+
 .addBgBottom {
 	background-color: #a0e0f9;
 	border: 2px solid #4496b6;
-	margin-left: -2px;
-	margin-top: -5px;
-	padding-top: 2px;
 	width: 100%;
 	height: 100%;
 	opacity: 0.75;
-	margin-bottom: -8px;
+	margin-left: -2px;
+	margin-top: 8px;
+	padding-top: 2px;
+	margin-bottom: 0px;
 	border-radius: 0px 0px 5px 5px;
 	border-top: none;
+}
+
+@-moz-document url-prefix() {
+    .addBgTop {
+		margin-bottom: -7px;
+		height: 100%;
+    }
+	.addBgBetween {
+		margin-left: -2px;
+		margin-top: -5px;
+		padding-top: 2px;
+		margin-bottom: -8px;
+	}
+	.addBgBottom {
+		margin-left: -2px;
+		margin-top: -5px;
+		padding-top: 2px;
+		margin-bottom: -8px;
+	}
 }
 
 .innhold {
@@ -252,6 +282,10 @@ td .innhold h5 {
 .select {
 	margin-top: 30px;
 	margin-left: 35px;
+}
+select {
+	width: 110px;
+	font-size: 1.0em;
 }
 
 .tdbottom {
