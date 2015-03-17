@@ -528,7 +528,7 @@ require "load.php";
 	</div>
 	<script>
 	var weeknumber = <?php echo date("W") ?>,
-		username = <?php echo $_SESSION["user"]["username"] ?>;
+		username = "<?php echo $_SESSION["user"]["username"] ?>";
 		
 		console.log(weeknumber + " " + username);
 	</script>
