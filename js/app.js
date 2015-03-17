@@ -91,7 +91,6 @@ $("document").ready(function() {
 			var bookings = json.Booking;
 			
 			getBookings(bookings);
-			// $(td).each(fun)
 		});
 		
 		$("#cal").on("click", "td", function(e) {
