@@ -107,7 +107,7 @@ $("document").ready(function() {
 					success: function(data) {
 						$("#booking").hide();
 						var book = jsonData();
-						console.log(book.Booking);
+						console.log(data);
 						$(elem).css("background-color", "#fff");
 						getBookings(book.Booking);
 						elem = "";

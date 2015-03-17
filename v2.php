@@ -10,7 +10,7 @@ require "load.php";
 
 
     if(isset($_POST["fromHour"]) && !empty($_SESSION['user'])) {
-        addBook($_POST['roomId'], $_POST['fromHour'], $_POST['toHour'], $_POST['day'], $_POST['week'], $_SESSION["user"]["id"]);
+        addBook($_POST['roomId'], $_POST['fromHour'], $_POST['toHour'], $_POST['day'], $_POST['week'], $_SESSION["user"]["id"], $db);
 	}
 	
 	
