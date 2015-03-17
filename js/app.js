@@ -1,34 +1,18 @@
 $("document").ready(function() {
-	
-	var jsonData = function () {
-	    var json = null;
-	    $.ajax({
-	        'async': false,
-	        'global': false,
-	        'url': "data.json",
-	        'dataType': "json",
-	        'success': function (data) {
-	            json = data;
-	        }
-	    });
-	    return json;
-	} 
-	
-	var json = jsonData();
-	
-	var rooms = json.room;
-	var bookings = json.Booking;
-	
-	// getBookings(bookings);
-	
 		
+	var json = jsonData();
+
+	var rooms = json.room,
+		bookings = json.Booking;
+
+
 		if ($("#booking").is(":visible")) {
 			$('html').click(function() {
 				$("#booking").hide();
 			});
 		}
 
-		var weeknumber = 11;
+	
 		$(".weeknumber").html(weeknumber);	
 		
 		$("#findRoom").change(function() {	
@@ -50,8 +34,6 @@ $("document").ready(function() {
 				$("select[name='romnr']").html("");
 				$("select[name='romnr']").append("<option>Velg Rom</option>");
 				
-				
-				console.log(prosjektor + " " + whiteboard);
 				rooms.forEach(function(room) {
 					if (antPersoner <= room["room_size"] && prosjektor == 0 && whiteboard == 0) {
 						$("select[name='romnr']").append("<option value='" + room['id'] + "'>Rom " + room['room_number'] + "</option>");
@@ -80,18 +62,17 @@ $("document").ready(function() {
 				$(this).removeClass("booked");
 				$(".innhold h4", this).html("");
 				$(".innhold h5", this).html("");
-				$("div", this).removeClass("addBgTop");
-				$("div", this).removeClass("addBgBetween");
-				$("div", this).removeClass("addBgBottom");
+				$("div", this).removeClass("addBgTop addBgBetween addBgBottom");
 			});
 			
-			var json = jsonData();
-	
-			var rooms = json.room;
-			var bookings = json.Booking;
+			var json = jsonData(),
+				rooms = json.room;
+				bookings = json.Booking;
 			
-			getBookings(bookings);
+				getBookings(bookings);
 		});
+		
+	
 		
 		$("#cal").on("click", "td", function(e) {
 			//weeknumber = weeknumber + 1;
@@ -105,7 +86,7 @@ $("document").ready(function() {
 			roomBook(this, e);
 			
 			elem = this;
-			console.log(elem);
+			
 			
 			$(".reserver").on("click", function(e) {
 				
@@ -122,15 +103,15 @@ $("document").ready(function() {
 					url: "v2.php",
 					data: data,
 					success: function(data) {
+						console.log(data);
 						$("#booking").hide();
 						var book = jsonData();
-						console.log(data);
 						$(elem).css("background-color", "#fff");
 						getBookings(book.Booking);
 					}
-				})
+				});
 				
-				console.log(roomId, fromHour, toHour,day, week);
+				
 				
 			});
 			
@@ -138,9 +119,6 @@ $("document").ready(function() {
 			
 		
 		function roomBook(elem, e) {
-			
-			console.log(elem)
-	
 
 			changeBg();
 
@@ -152,8 +130,6 @@ $("document").ready(function() {
 			$("[name=from]").val(hour);
 			$("[name=to]").val(hour + 2);
 			
-			console.log(hour);
-			
 			var relX = e.pageX;
 			var relY = e.pageY;
 
@@ -164,7 +140,6 @@ $("document").ready(function() {
 			
 			$(".avbryt").click(function(elem) {
 				$("#booking").hide();
-				elem = ""
 				changeBg();
 			});
 
@@ -175,6 +150,20 @@ $("document").ready(function() {
 
 			
 		}
+		
+		function jsonData() {
+		    var json = null;
+		    $.ajax({
+		        'async': false,
+		        'global': false,
+		        'url': "data.json",
+		        'dataType': "json",
+		        'success': function (data) {
+		            json = data;
+		        }
+		    });
+		    return json;
+		} 
 		
 		function changeBg()  {
 
@@ -194,21 +183,18 @@ $("document").ready(function() {
 					clock = $(this).attr("data-clock"),
 					roomid = $(this).attr("data-room"),
 					td = this;
-					
-					console.log(roomid);
+				
 					bookings.forEach(function(book) {
 
 						if (book["week"] == week && book["weekday"] == day && book["room_id"] == roomid) {
 							// console.log(book["start_time"] + " " + clock);
 							
 							if(book["start_time"] == clock) {
-								console.log(book["weekday"]);
 								if (!$(td).hasClass("booked")) {
 									$(td).addClass("booked");
 									$(".innhold", td).addClass("addBgTop").show();
 									$(".innhold h4", td).html("Reservert av:");
-									console.log($(".innhold h4", td));
-									$(".innhold h5", td).html(book["user_id"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
+									$(".innhold h5", td).html(book["username"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
 								}
 								
 								clock++;
@@ -236,6 +222,7 @@ $("document").ready(function() {
 					
 			});
 		}
-		
+	
 
-		});
+});
+		

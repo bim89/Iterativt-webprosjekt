@@ -96,13 +96,15 @@ input[type="text"], input[type="password"] {
 	background-color: #409831;
 	margin-left: 20px;
 }
-.reserver:hover{ background-color: #3ab326; }
+.reserver:hover{ background-color: #3ab326; cursor: pointer; }
 
 .avbryt {
-	background-color: #d12d29; 
+	background-color: #c92323; 
 	margin-top: 20px;
 	margin-left: 10px;
 }
+
+.avbryt:hover{ background-color: #e61313; cursor: pointer; }
 
 input[type=submit]:hover {
 	background-color: green;	
@@ -233,13 +235,6 @@ td {
 		padding-top: 2px;
 		margin-bottom: -8px;
 	}
-}
-
-.innhold {
-
-}
-
-.checkBooking {
 }
 
 td .innhold h4  {
