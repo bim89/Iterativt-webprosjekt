@@ -19,7 +19,7 @@ $("document").ready(function() {
 	var rooms = json.room;
 	var bookings = json.Booking;
 	
-	getBookings(bookings);
+	// getBookings(bookings);
 	
 		
 		if ($("#booking").is(":visible")) {
@@ -54,26 +54,44 @@ $("document").ready(function() {
 				console.log(prosjektor + " " + whiteboard);
 				rooms.forEach(function(room) {
 					if (antPersoner <= room["room_size"] && prosjektor == 0 && whiteboard == 0) {
-						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						$("select[name='romnr']").append("<option value='" + room['id'] + "'>Rom " + room['room_number'] + "</option>");
 						
 					} else if (antPersoner <= room["room_size"] && prosjektor == room['projector'] && whiteboard == room["whiteboard"]) {
 						
-						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						$("select[name='romnr']").append("<option value='" + room['id'] + "'>Rom " + room['room_number'] + "</option>");
 						
 					} else if (antPersoner <= room["room_size"] && prosjektor == room['projector'] && whiteboard != room["whiteboard"] && prosjektor == 1 && whiteboard == 0) {
 						
-						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						$("select[name='romnr']").append("<option value='" + room['id'] + "'>Rom " + room['room_number'] + "</option>");
 						
-					} else if(antPersoner <= room["room_size"] && prosjektor != room['projector'] && whiteboard == room["whiteboard"] && whiteboard == 1 && prosjektor == 0) {
+					} else if(antPersoner <= room["room_size"] && prosjektor != room['id'] && whiteboard == room["whiteboard"] && whiteboard == 1 && prosjektor == 0) {
 						
-						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						$("select[name='romnr']").append("<option value='" + room['id'] + "'>Rom " + room['room_number'] + "</option>");
 						
 					} 
 				});
 		});
 		
-		$("select[name='']").change(function() {
+		$("select[name='romnr']").change(function() {
+			var romid = $(this).val();
 			
+			$("td").each(function() {
+				$(this).attr("data-room", romid);
+				$(this).removeClass("booked");
+				$(".innhold h4", this).html("");
+				$(".innhold h5", this).html("");
+				$("div", this).removeClass("addBgTop");
+				$("div", this).removeClass("addBgBetween");
+				$("div", this).removeClass("addBgBottom");
+			});
+			
+			var json = jsonData();
+	
+			var rooms = json.room;
+			var bookings = json.Booking;
+			
+			getBookings(bookings);
+			// $(td).each(fun)
 		});
 		
 		$("#cal").on("click", "td", function(e) {
@@ -92,7 +110,7 @@ $("document").ready(function() {
 			
 			$(".reserver").on("click", function(e) {
 				
-				var roomId = 1;
+				var roomId = $(elem).attr("data-room");
 				var fromHour = $("select[name='from']").val();
 				var toHour = $("select[name='to']").val();
 				var day = $(elem).attr("data-day");
@@ -110,7 +128,6 @@ $("document").ready(function() {
 						console.log(book.Booking);
 						$(elem).css("background-color", "#fff");
 						getBookings(book.Booking);
-						elem = "";
 					}
 				})
 				
@@ -176,11 +193,13 @@ $("document").ready(function() {
 				var week = $(this).attr("data-week"),
 					day = $(this).attr("data-day"),
 					clock = $(this).attr("data-clock"),
+					roomid = $(this).attr("data-room"),
 					td = this;
 					
+					console.log(roomid);
 					bookings.forEach(function(book) {
 
-						if (book["week"] == week && book["weekday"] == day) {
+						if (book["week"] == week && book["weekday"] == day && book["room_id"] == roomid) {
 							// console.log(book["start_time"] + " " + clock);
 							
 							if(book["start_time"] == clock) {
