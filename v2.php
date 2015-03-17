@@ -53,7 +53,7 @@ require "load.php";
         <?php
         if (isset($_SESSION['user'])) {
 		echo '<span style="color:#FFFFFF;">"Vellkommen "</span>';
-        echo htmlentities($_SESSION['user']['firstname'], ENT_QUOTES, 'UTF-8') . " " . htmlentities($_SESSION['user']['lastname'], ENT_QUOTES, 'UTF-8');
+        echo utf8_encode($_SESSION['user']['firstname']) . " " . utf8_encode($_SESSION['user']['lastname']);
           ?>
             <div id="loginMessage">
                 <p>
