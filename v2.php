@@ -112,7 +112,7 @@ require "load.php";
 					<option>Velg Rom</option>
 					<?php
 						foreach ($result as $room) {
-							echo "<option value='" . $room["room_number"] . "'>" . $room["room_number"] . "</option>";
+							echo "<option value='" . $room["id"] . "'>" . $room["room_number"] . "</option>";
 						}
 					?>
 				</select>
