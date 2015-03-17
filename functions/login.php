@@ -7,11 +7,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
 {
     $sqlquery =
         "SELECT
-        id,
-        username,
-        password,
-        salt,
-        email
+        *
         FROM Users WHERE username = :username
         ";
 
