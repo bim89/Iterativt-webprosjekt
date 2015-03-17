@@ -31,14 +31,49 @@ $("document").ready(function() {
 		var weeknumber = 11;
 		$(".weeknumber").html(weeknumber);	
 		
-		$("#findRoom").click(function() {
-			var prosjektor = $("input[name$='prosejktor']").val(),
-				whiteboard = $("input[name$='whiteboard']").val(),
+		$("#findRoom").change(function() {	
+			var prosjektor = 0,
+				whiteboard = 0,
 				antPersoner = $("select[name$='personer']").val(),
-				etasje = $("select[name$='etasje']").val(),
-				rom = $("select[name$='romnr']").val()
+				rom = $("select[name$='romnr']").val();
+				
+				if ($("input[name$='prosejktor']").prop('checked')) {
+					prosjektor = $("input[name$='prosejktor']").val();
+					
+				}
+				
+				if ($("input[name$='whiteboard']").prop('checked')) {
+					whiteboard = $("input[name$='whiteboard']").val();
+					
+				}
+				
+				$("select[name='romnr']").html("");
+				$("select[name='romnr']").append("<option>Velg Rom</option>");
+				
+				
+				console.log(prosjektor + " " + whiteboard);
+				rooms.forEach(function(room) {
+					if (antPersoner <= room["room_size"] && prosjektor == 0 && whiteboard == 0) {
+						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						
+					} else if (antPersoner <= room["room_size"] && prosjektor == room['projector'] && whiteboard == room["whiteboard"]) {
+						
+						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						
+					} else if (antPersoner <= room["room_size"] && prosjektor == room['projector'] && whiteboard != room["whiteboard"] && prosjektor == 1 && whiteboard == 0) {
+						
+						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						
+					} else if(antPersoner <= room["room_size"] && prosjektor != room['projector'] && whiteboard == room["whiteboard"] && whiteboard == 1 && prosjektor == 0) {
+						
+						$("select[name='romnr']").append("<option value='" + room['room_number'] + "'>Rom " + room['room_number'] + "</option>");
+						
+					} 
+				});
+		});
+		
+		$("select[name='']").change(function() {
 			
-			console.log(prosjektor + " " + whiteboard + " " + antPersoner + " " + etasje + " " + rom);
 		});
 		
 		$("#cal").on("click", "td", function(e) {
@@ -49,9 +84,10 @@ $("document").ready(function() {
 					
 				//$(this).attr("data-week", week);
 			//});
+			var elem  = "";
 			roomBook(this, e);
 			
-			var elem = this;
+			elem = this;
 			console.log(elem);
 			
 			$(".reserver").on("click", function(e) {
@@ -112,12 +148,13 @@ $("document").ready(function() {
 			
 			$(".avbryt").click(function(elem) {
 				$("#booking").hide();
+				elem = ""
 				changeBg();
 			});
 
-				$('#booking').click(function(event){
-					    event.stopPropagation();
-				});
+			$('#booking').click(function(event){
+				    event.stopPropagation();
+			});
 			}
 
 			

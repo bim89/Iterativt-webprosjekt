@@ -94,19 +94,9 @@ require "load.php";
 		<form method="POST" id="findRoom">
 			<div id="utstyr">
 				<h3>Utstyr</h3>
-				<input type="checkbox" name="prosejktor" value="true"/> Prosjektor
-				<input type="checkbox" name="whiteboard" value="true"/> Whiteboard
-			</div>
-			<div id="etasje">
-				<select name="etasje">
-					<option value="1">Etasje 1</option>
-					<option value="2">Etasje 2</option>
-					<option value="3">Etasje 3</option>
-					<option value="4">Etasje 4</option>
-					<option value="5">Etasje 5</option>
-					<option value="6">Etasje 6</option>
-				</select>
-			</div>
+				<input type="checkbox" name="prosejktor" value="1"/> Prosjektor
+				<input type="checkbox" name="whiteboard" value="1"/> Whiteboard
+				</div
 			<div id="antPersoner">
 				<select name="personer">
 					<option value="2">2</option>
@@ -120,10 +110,10 @@ require "load.php";
 			<h3>Rom nr</h3>
 				<select name="romnr">
 					<option>Velg Rom</option>
-					<?
-					foreach($result as $row) {
-						echo "<option value='" . $row['room_number'] . "'>Rom " . $row['room_number'] . "</option>";
-					}
+					<?php
+						foreach ($result as $room) {
+							echo "<option value='" . $room["room_number"] . "'>" . $room["room_number"] . "</option>";
+						}
 					?>
 				</select>
 			</div>
@@ -413,7 +403,7 @@ require "load.php";
 							<h5></h5>
 						</div>
 					</td>
-					<tddata-room="1"  data-week="11" data-clock="13" data-day="sun" style="border-right: none;">
+					<td data-room="1"  data-week="11" data-clock="13" data-day="sun" style="border-right: none;">
 						<div class="innhold">
 							<h4></h4>
 							<h5></h5>
@@ -536,6 +526,12 @@ require "load.php";
 			<input type="button" class="reserver" value="Reserver" />
 		</form>
 	</div>
+	<script>
+	var weeknumber = <?php echo date("W") ?>,
+		username = <?php echo $_SESSION["user"]["username"] ?>;
+		
+		console.log(weeknumber + " " + username);
+	</script>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script src="js/app.js"></script>
 <body>
