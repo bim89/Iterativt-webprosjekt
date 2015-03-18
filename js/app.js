@@ -169,47 +169,12 @@ $("document").ready(function() {
 		
 	
 		
-		$("#cal").on("click", "td", function(e) {
+		$("td").on("click", function(e) {
 			
-			var elem  = "";
-			roomBook(this, e);
+			
 			
 			elem = this;
 			
-			
-			$(".reserver").on("click", function(e) {
-				
-				var roomId = $(elem).attr("data-room");
-				var fromHour = $("select[name='from']").val();
-				var toHour = $("select[name='to']").val();
-				var day = $(elem).attr("data-day");
-				var week = $(elem).attr("data-week");
-				
-				var data = {"roomId": roomId, "fromHour": fromHour, "toHour": toHour, "day": day, "week": week}
-				
-				$.ajax({
-					type: "POST",
-					url: "v2.php",
-					data: data,
-					success: function(data) {
-						console.log(data);
-						$("#booking").hide();
-						var book = jsonData();
-						$(elem).css("background-color", "#fff");
-						alert("rom reservert");
-						getBookings(book.Booking);
-					}
-				});
-				
-				
-				
-			});
-			
-		});
-			
-		
-		function roomBook(elem, e) {
-
 			changeBg();
 
 			
@@ -237,6 +202,40 @@ $("document").ready(function() {
 				    event.stopPropagation();
 			});
 			}
+			
+			
+			$(".reserver").on("click", function(e) {
+				
+				var roomId = $(elem).attr("data-room");
+				var fromHour = $("select[name='from']").val();
+				var toHour = $("select[name='to']").val();
+				var day = $(elem).attr("data-day");
+				var week = $(elem).attr("data-week");
+				
+				var data = {"roomId": roomId, "fromHour": fromHour, "toHour": toHour, "day": day, "week": week}
+				
+				$.ajax({
+					type: "POST",
+					url: "v2.php",
+					data: data,
+					success: function(data) {
+						console.log(data);
+						$("#booking").hide();
+						var book = jsonData();
+						$(elem).css("background-color", "#fff");
+
+						getBookings(book.Booking);
+					}
+				});
+				
+				
+				
+			});
+			
+		});
+			
+		
+		function roomBook(elem, e) {
 
 			
 		}
