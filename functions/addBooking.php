@@ -38,8 +38,6 @@
 
             $stmt->execute();
 
-            //sendmail();
-
             $stmt = $db->prepare("SELECT * FROM Booking");
             $stmt->execute();
 

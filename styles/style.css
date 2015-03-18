@@ -44,12 +44,11 @@ header {
 #loginform {
 	float: right;
 }
-
 #loginform form{
+    float: left;
 	margin-right: 80px;
 	margin-top: 25px;
 }
-
 input[type="submit"]{
 	color: #fff;
 	font-family: "Helvetica Neue";

@@ -56,15 +56,18 @@ require "load.php";
 
         <?php
         if (isset($_SESSION['user'])) {
-		echo '<span style="color:#FFFFFF;">"Vellkommen "</span>';
+        ?>
+            <div id="loginMessage">
+            <?php
+		echo 'Velkommen: ';
         echo utf8_encode($_SESSION['user']['firstname']) . " " . utf8_encode($_SESSION['user']['lastname']);
           ?>
-            <div id="loginMessage">
-                <p>
-            <form method="post" action="v2.php">
-                <input type="hidden" value="" name="username" />
-                <input type="hidden" value="logout" name="logout" />
-                <input type="submit" value="Logout"/>
+                <div id="loginform">
+                    <form method="post" action="v2.php">
+                        <input type="hidden" value="" name="username" />
+                        <input type="hidden" value="logout" name="logout" />
+                        <input type="submit" value="Logout"/>
+
                 <?php
                 if(isset($_POST['logout'])) {
                     unset($_SESSION['user']);
@@ -72,7 +75,6 @@ require "load.php";
                 }
                 ?>
             </form>
-            </p>
         </div>
 		
 		<div id="weekbutton">

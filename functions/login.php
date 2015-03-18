@@ -17,7 +17,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
         $state = $db->prepare($sqlquery);
         $result = $state->execute($sql_parameters);
     }catch(PDOException $e){
-        die("FAIL FAIL FAIL: " . $e->getMessage());
+        die("Feil Passord eller Brukernavn: " . $e->getMessage());
     }
 
     $login = false;
@@ -49,7 +49,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
 
 
     }else{
-        print("Login Failed Big Time!");
+        print("Brukeren er enten ikke registrert eller feil brukernavn/passord!");
 
     }
 }
