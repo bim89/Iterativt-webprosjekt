@@ -74,6 +74,12 @@ require "load.php";
             </form>
             </p>
         </div>
+		
+		<div id="weekbutton">
+			<a id="nextweek" href="#">Neste Uke</a>
+			<a id="lastweek" href="#">Forrige Uke</a>
+		</div>
+		
         <?php
      } else {
      ?>

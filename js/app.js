@@ -12,8 +12,54 @@ $("document").ready(function() {
 			});
 		}
 
-	
+		console.log(weeknumber);
 		$(".weeknumber").html(weeknumber);	
+		
+		
+		
+		$("#nextweek").click(function(e) {
+			
+			e.preventDefault();
+			
+			weeknumber = weeknumber + 1;
+			$(".weeknumber").html(weeknumber);	
+			$("td").each(function() {	
+				$(this).attr("data-week", weeknumber);
+				$(this).removeClass("booked");
+				$(".innhold h4", this).html("");
+				$(".innhold h5", this).html("");
+				$("div", this).removeClass("addBgTop addBgBetween addBgBottom useraddBgTop useraddBgBetween useraddBgBottom");
+			});
+			
+			var json = jsonData(),
+				rooms = json.room,
+				bookings = json.Booking;
+			
+				getBookings(bookings);
+		});
+		
+		$("#lastweek").click(function(e) {
+			
+			e.preventDefault();
+			
+			weeknumber = weeknumber - 1;
+			$(".weeknumber").html(weeknumber);	
+			
+			$("td").each(function() {	
+				$(this).attr("data-week", weeknumber);
+				$(this).removeClass("booked");
+				$(".innhold h4", this).html("");
+				$(".innhold h5", this).html("");
+				$("div", this).removeClass("addBgTop addBgBetween addBgBottom useraddBgTop useraddBgBetween useraddBgBottom");
+			});
+			
+			var json = jsonData(),
+				rooms = json.room,
+				bookings = json.Booking;
+			
+				getBookings(bookings);
+		});
+		
 		
 		$("#findRoom").change(function() {	
 			var prosjektor = 0,
@@ -124,13 +170,7 @@ $("document").ready(function() {
 	
 		
 		$("#cal").on("click", "td", function(e) {
-			//weeknumber = weeknumber + 1;
-			//$(".weeknumber").html(weeknumber);	
-			//var week = weeknumber;	
-			//$("td").each(function() {
-					
-				//$(this).attr("data-week", week);
-			//});
+			
 			var elem  = "";
 			roomBook(this, e);
 			
