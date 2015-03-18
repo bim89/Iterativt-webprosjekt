@@ -14,7 +14,9 @@ $("document").ready(function() {
 
 		console.log(weeknumber);
 		$(".weeknumber").html(weeknumber);	
-		
+		$("td").each(function() {	
+			$(this).attr("data-week", weeknumber);
+		});
 		
 		
 		$("#nextweek").click(function(e) {
@@ -121,7 +123,7 @@ $("document").ready(function() {
 				$(".cancel").click(function() {
 					$.ajax({
 						type: "POST",
-						url: "v2.php",
+						url: "index.php",
 						data: data,
 						success: function(data) {
 							$("#userBooking").hide();
@@ -216,7 +218,7 @@ $("document").ready(function() {
 				
 				$.ajax({
 					type: "POST",
-					url: "v2.php",
+					url: "index.php",
 					data: data,
 					success: function(data) {
 						console.log(data);

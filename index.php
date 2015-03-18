@@ -63,7 +63,7 @@ require "load.php";
         echo utf8_encode($_SESSION['user']['firstname']) . " " . utf8_encode($_SESSION['user']['lastname']);
           ?>
                 <div id="loginform">
-                    <form method="post" action="v2.php">
+                    <form method="post" action="index.php">
                         <input type="hidden" value="" name="username" />
                         <input type="hidden" value="logout" name="logout" />
                         <input type="submit" value="Logout"/>
@@ -71,7 +71,7 @@ require "load.php";
                 <?php
                 if(isset($_POST['logout'])) {
                     unset($_SESSION['user']);
-                    header("Location: v2.php");
+                    header("Location: index.php");
                 }
                 ?>
             </form>
@@ -87,7 +87,7 @@ require "load.php";
      ?>
 
         <div id="loginform">
-			<form method="post" action="v2.php">
+			<form method="post" action="index.php">
 				<input type="text" placeholder="Brukernavn" name="username" />
 				<input type="password" placeholder="Passord" name="password" />
                 <input type="submit" value="Login" />
