@@ -22,7 +22,7 @@ require "load.php";
 
 	function addToJson($args, $obj = 0) {
 
-
+		
 		$json = file_get_contents("data.json");
 		$data = json_decode($json, true);
 
