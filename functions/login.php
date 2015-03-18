@@ -8,7 +8,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
     $sqlquery =
         "SELECT
         *
-        FROM Users WHERE username = :username
+        FROM users WHERE username = :username
         ";
 
     $sql_parameters = array(':username' => $_POST['username']);

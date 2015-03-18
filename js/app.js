@@ -55,15 +55,47 @@ $("document").ready(function() {
 		});
 		
 		$("td div").click(function(e) {
-			
+				
+				var bookId = $(this).attr("data-bookid");
+				console.log(bookId);
+
 			if ($(this).hasClass("useraddBgTop")) {
-				console.log(this);
 				var relX = e.pageX;
 				var relY = e.pageY;
-
+				
+				var data = {bookId: bookId, cancel: "cancel"};
+				
+				
+				
 				$('#userBooking').show().css({
 					'top' : relY - 100,
 					'left' : relX + 10
+				});
+				
+				$(".cancel").click(function() {
+					$.ajax({
+						type: "POST",
+						url: "v2.php",
+						data: data,
+						success: function(data) {
+							$("#userBooking").hide();
+							
+							$("td").each(function(td) {
+								console.log(this);
+								$(this).removeClass("booked");
+								$(td).removeClass("booked");
+								$(".innhold h4", td).html("");
+								$(".innhold h5", td).html("");
+								$("div", td).removeClass("addBgTop addBgBetween addBgBottom useraddBgTop useraddBgBetween useraddBgBottom");
+							});
+			
+							var json = jsonData(),
+								rooms = json.room,
+								bookings = json.Booking;
+			
+								getBookings(bookings);
+						}
+					});
 				});
 				
 			} else {
@@ -79,11 +111,11 @@ $("document").ready(function() {
 				$(this).removeClass("booked");
 				$(".innhold h4", this).html("");
 				$(".innhold h5", this).html("");
-				$("div", this).removeClass("addBgTop addBgBetween addBgBottom");
+				$("div", this).removeClass("addBgTop addBgBetween addBgBottom useraddBgTop useraddBgBetween useraddBgBottom");
 			});
 			
 			var json = jsonData(),
-				rooms = json.room;
+				rooms = json.room,
 				bookings = json.Booking;
 			
 				getBookings(bookings);
@@ -212,11 +244,13 @@ $("document").ready(function() {
 									$(td).addClass("booked");
 									if (book["username"] == username) {
 										$(".innhold", td).addClass("useraddBgTop").show();
+										$(".innhold", td).attr("data-bookid", book["book_id"]);
 										$(".useraddBgTop h4", td).html("Din Reservering:");
 										$(".useraddBgTop h5", td).html(book["username"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
 										
 									} else {
 									$(".innhold", td).addClass("addBgTop").show();
+									$(".innhold", td).attr("data-bookid", book["book_id"]);
 									$(".addBgTop h4", td).html("Reservert av:");
 									$(".addBgTop h5", td).html(book["username"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
 									}
@@ -231,8 +265,10 @@ $("document").ready(function() {
 									
 										if (book["username"] == username) {
 											$(".innhold", tcell).addClass("useraddBgBottom").show();
+											$(".innhold", tcell).attr("data-bookid", book["book_id"]);
 										} else {
 											$(".innhold", tcell).addClass("addBgBottom").show();
+											$(".innhold", tcell).attr("data-bookid", book["book_id"]);
 										}
 									} else {
 										
@@ -241,8 +277,10 @@ $("document").ready(function() {
 										
 										if (book["username"] == username) {
 											$(".innhold", tcell).addClass("useraddBgBetween").show();
+											$(".innhold", tcell).attr("data-bookid", book["book_id"]);
 										} else {
 										$(".innhold", tcell).addClass("addBgBetween").show();
+										$(".innhold", tcell).attr("data-bookid", book["book_id"]);
 										}
 									}
 									clock++;

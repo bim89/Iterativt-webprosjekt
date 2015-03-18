@@ -1,6 +1,6 @@
 <?php
 
-    function deleteBook($bookid, $userid){
+    function deleteBook($bookid, $user){
 
         /*$query = $db->query("SELECT * FROM room WHERE id NOT IN(SELECT * FROM Booking
                              WHERE($fromhour < start_time AND $tohour > stop_time)
@@ -11,11 +11,10 @@
 
 		require("dbconnect.php");
 
-        $stmt = $db->prepare("DELETE FROM Booking WHERE book_id = $bookid AND user_id = $userid");
-        $roomsize = 2;
+        $stmt = $db->prepare("DELETE FROM Booking WHERE book_id = :book_id && username = :user");
 
         $stmt->bindParam(':book_id', $bookid);
-        $stmt->bindParam(':user_id', $userid);
+        $stmt->bindParam(':user', $user);
         
 
         $stmt->execute();

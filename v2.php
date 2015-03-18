@@ -13,6 +13,10 @@ require "load.php";
         addBook($_POST['roomId'], $_POST['fromHour'], $_POST['toHour'], $_POST['day'], $_POST['week'], $_SESSION['user']["username"]);
 	}
 	
+    if(isset($_POST["bookId"]) && isset($_POST["cancel"]) && !empty($_SESSION['user'])) {
+        deleteBook($_POST["bookId"], $_SESSION["user"]['username']);
+	}
+	
 	
 	addToJson($result, "room");
 
@@ -147,44 +151,44 @@ require "load.php";
 				</tr>
 				<tr>
 					<td data-room="1" data-week="11" data-clock="8" data-day="mon" style="border-left: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>	
 					<td data-room="1" data-week="11" data-clock="8" data-day="tue">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 
 					</td>
 					<td data-room="1" data-week="11" data-clock="8" data-day="wed">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="8" data-day="thu">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11"  data-clock="8" data-day="fri">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="8" data-day="sat">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="8" data-day="sun" style="border-right: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -192,43 +196,43 @@ require "load.php";
 				</tr>
 				<tr>
 					<td data-room="1" data-week="11" data-clock="9" data-day="mon" style="border-left: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>	
 					<td data-room="1" data-week="11" data-clock="9" data-day="tue">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="9" data-day="wed">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="9" data-day="thu">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="9" data-day="fri">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="9" data-day="sat">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="9" data-day="sun" style="border-right: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -236,43 +240,43 @@ require "load.php";
 				</tr>
 				<tr>
 					<td data-room="1" data-week="11" data-clock="10" data-day="mon" style="border-left: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>	
 					<td data-room="1" data-week="11" data-clock="10" data-day="tue">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="10" data-day="wed">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="10" data-day="thu">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="10" data-day="fri">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="10" data-day="sat">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="10" data-day="sun" style="border-right: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -280,19 +284,19 @@ require "load.php";
 				</tr>
 				<tr>
 					<td data-room="1" data-week="11" data-clock="11" data-day="mon" style="border-left: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>	
 					<td data-room="1" data-week="11" data-clock="11" data-day="tue">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="11" data-day="wed">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -304,19 +308,19 @@ require "load.php";
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="11" data-day="fri">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="11" data-day="sat">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="11" data-day="sun" style="border-right: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -324,43 +328,43 @@ require "load.php";
 				</tr>
 				<tr>
 					<td data-room="1" data-week="11" data-clock="12" data-day="mon" style="border-left: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>	
 					<td data-room="1" data-week="11" data-clock="12" data-day="tue">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="12" data-day="wed">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="12" data-day="thu">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="12" data-day="fri">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="12" data-day="sat">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="12" data-day="sun" style="border-right: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -368,43 +372,43 @@ require "load.php";
 				</tr>
 				<tr>
 					<td data-room="1" data-week="11" data-clock="13" data-day="mon" style="border-left: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>	
 					<td data-room="1" data-week="11" data-clock="13" data-day="tue">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="13" data-day="wed">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="13" data-day="thu">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="13" data-day="fri">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="13" data-day="sat">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1"  data-week="11" data-clock="13" data-day="sun" style="border-right: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -412,43 +416,43 @@ require "load.php";
 				</tr>
 				<tr>
 					<td data-room="1" data-week="11" data-clock="14" data-day="mon" style="border-left: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>	
 					<td data-room="1" data-week="11" data-clock="14" data-day="tue">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="14" data-day="wed">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="14" data-day="thu">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="14" data-day="fri">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="14" data-day="sat">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
 					</td>
 					<td data-room="1" data-week="11" data-clock="14" data-day="sun" style="border-right: none;">
-						<div class="innhold">
+						<div class="innhold" data-bookid="">
 							<h4></h4>
 							<h5></h5>
 						</div>
@@ -555,8 +559,7 @@ require "load.php";
 			<option class="to" value="15">15:00</option>
 		</select>
 		</div>	
-			<input type="button" class="avbryt" value="Avbryt" />
-			<input type="button" class="reserver" value="Reserver" />
+			<input type="button" class="cancel" value="Fjern Booking" />
 		</form>
 	</div>
 	
