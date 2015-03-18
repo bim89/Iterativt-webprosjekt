@@ -54,6 +54,23 @@ $("document").ready(function() {
 				});
 		});
 		
+		$("td div").click(function(e) {
+			
+			if ($(this).hasClass("useraddBgTop")) {
+				console.log(this);
+				var relX = e.pageX;
+				var relY = e.pageY;
+
+				$('#userBooking').show().css({
+					'top' : relY - 100,
+					'left' : relX + 10
+				});
+				
+			} else {
+				console.log(this);
+			}
+		});
+		
 		$("select[name='romnr']").change(function() {
 			var romid = $(this).val();
 			
@@ -194,11 +211,15 @@ $("document").ready(function() {
 								if (!$(td).hasClass("booked")) {
 									$(td).addClass("booked");
 									if (book["username"] == username) {
-										console.log(username);
-									}
+										$(".innhold", td).addClass("useraddBgTop").show();
+										$(".useraddBgTop h4", td).html("Din Reservering:");
+										$(".useraddBgTop h5", td).html(book["username"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
+										
+									} else {
 									$(".innhold", td).addClass("addBgTop").show();
-									$(".innhold h4", td).html("Reservert av:");
-									$(".innhold h5", td).html(book["username"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
+									$(".addBgTop h4", td).html("Reservert av:");
+									$(".addBgTop h5", td).html(book["username"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
+									}
 								}
 								
 								clock++;
@@ -208,13 +229,21 @@ $("document").ready(function() {
 										var tcell = $("td[data-week='" + book["week"] + "'][data-day='" + book["weekday"] + "'][data-clock='" + clock + "']");
 										$(tcell).addClass("booked");
 									
-										$(".innhold", tcell).addClass("addBgBottom").show();
+										if (book["username"] == username) {
+											$(".innhold", tcell).addClass("useraddBgBottom").show();
+										} else {
+											$(".innhold", tcell).addClass("addBgBottom").show();
+										}
 									} else {
 										
 										var tcell = $("td[data-week='" + book["week"] + "'][data-day='" + book["weekday"] + "'][data-clock='" + clock + "']");
 										$(tcell).addClass("booked");
-									
+										
+										if (book["username"] == username) {
+											$(".innhold", tcell).addClass("useraddBgBetween").show();
+										} else {
 										$(".innhold", tcell).addClass("addBgBetween").show();
+										}
 									}
 									clock++;
 								}	

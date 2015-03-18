@@ -526,6 +526,40 @@ require "load.php";
 			<input type="button" class="reserver" value="Reserver" />
 		</form>
 	</div>
+	
+	<div id="userBooking" style="display:none">
+		<h1>Rerserver Rom</h1>
+		<form method="POST" class="reserve">
+		<div class="select">	
+		Fra: 
+		<select name="from">
+			<option class="from" value="8">08:00</option>
+			<option class="from" value="9">09:00</option>
+			<option class="from" value="10">10:00</option>
+			<option class="from" value="11">11:00</option>
+			<option class="from" value="12">12:00</option>
+			<option class="from" value="13">13:00</option>
+			<option class="from" value="14">14:00</option>
+			<option class="from" value="15">15:00</option>
+		</select>
+
+		Til: 
+		<select name="to">
+			<option class="to" value="8">08:00</option>
+			<option class="to" value="9">09:00</option>
+			<option class="to" value="10">10:00</option>
+			<option class="to" value="11">11:00</option>
+			<option class="to" value="12">12:00</option>
+			<option class="to" value="13">13:00</option>
+			<option class="to" value="14">14:00</option>
+			<option class="to" value="15">15:00</option>
+		</select>
+		</div>	
+			<input type="button" class="avbryt" value="Avbryt" />
+			<input type="button" class="reserver" value="Reserver" />
+		</form>
+	</div>
+	
 	<script>
 	var weeknumber = <?php echo date("W") ?>,
 		username = "<?php echo $_SESSION["user"]["username"] ?>";
