@@ -107,6 +107,7 @@ $("document").ready(function() {
 						$("#booking").hide();
 						var book = jsonData();
 						$(elem).css("background-color", "#fff");
+						alert("rom reservert");
 						getBookings(book.Booking);
 					}
 				});
@@ -192,6 +193,9 @@ $("document").ready(function() {
 							if(book["start_time"] == clock) {
 								if (!$(td).hasClass("booked")) {
 									$(td).addClass("booked");
+									if (book["username"] == username) {
+										console.log(username);
+									}
 									$(".innhold", td).addClass("addBgTop").show();
 									$(".innhold h4", td).html("Reservert av:");
 									$(".innhold h5", td).html(book["username"] + " " + book["start_time"] + ":00-" + book["stop_time"] + ":00");
