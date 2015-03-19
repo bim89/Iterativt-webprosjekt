@@ -1,3 +1,4 @@
+* 70b4040 : Mulighet for å avbryte fjern booking
 * c5c6c89 : Endret skjermbredde
 * b5e111c : Fikset feil ved bookinger
 *   5ad87bb : Merge branch 'master' of https://github.com/bim89/Iterativt-webprosjekt
