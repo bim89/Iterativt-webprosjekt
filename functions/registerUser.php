@@ -3,31 +3,31 @@
 require('dbconnect.php');
 
     if(!empty($_POST)){
-        //Sjekker at bruker har skrevet et "ikke-tomt" brukernavn
+ 
         if(empty($_POST['username'])) {
             die("Skriv in et brukernavn");
         }
-        //Sjekker at bruker har skrevet et "ikke-tomt" passord felt
+
         if(empty($_POST['password'])) {
             die("Skriv in et passord");
         }
-        //Validerer at epost er riktig
+
         if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
         {
             die("Fyll in en gyldig epost-adresse");
         }
-        //Sjekker hvis brukernavn som bruker skrevet finnes i databasen
+ 
         $sql_query = "
                 SELECT 1
                 FROM users
                 WHERE username = :username";
 
-        //lagrer :username variablen til spørringen
+    
         $sql_parameters = array(
             ':username' => $_POST['username']
         );
 
-        //tester at kjøre spørringen, å lagrer resultatet i $result
+    
         try{
             $state = $db->prepare($sql_query);
             $result = $state->execute($sql_parameters);
@@ -61,7 +61,6 @@ require('dbconnect.php');
             die("Email er reden registrert");
         }
 
-        //Plats för andre sjekker, ev lengde på passord
 
 
 

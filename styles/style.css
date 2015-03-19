@@ -512,6 +512,16 @@ td .useraddBgTop h5 {
 
 #nextweek:hover{background-image: url("../img/arrow-right-hover.png");}
 
+.avbrytBook {
+	background-color: #44a7ce;
+	margin-top: 20px;
+	margin-left: 15px;
+}
+
+.cancel {
+	background-color: #974F4F;
+	margin-left: 5px;
+}
 
 
 #logout {

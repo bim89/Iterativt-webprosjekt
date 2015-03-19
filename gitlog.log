@@ -1,0 +1,113 @@
+* c5c6c89 : Endret skjermbredde
+* b5e111c : Fikset feil ved bookinger
+*   5ad87bb : Merge branch 'master' of https://github.com/bim89/Iterativt-webprosjekt
+|\  
+| * 4227c28 : endringer
+* | b77227c : slettet v2.php
+* | 7e6688b : La til screen.css
+* | 5c67fe9 : Endret på designet
+|/  
+* b9686cb : Slettet DS_Store
+* f9b8c90 : Slettet noen filer til
+* 4497f11 : Slettet filer
+* 479026f : Endret navn til index.php
+* 172e3be : Endret rettigheter
+* 628d5d8 : Fjernet dobbel booking bug
+* 717f192 : changes
+* 6f6d6ed : La til valg av uke
+* 26ba80e : La til avbooking
+* db96e57 : La til dbconnect i mysqlscript/
+* 151f8e0 : Grønn farge på brukers bookinger
+* c8068bc : Slettet dbconnect.php
+* 1eb3757 : endringer
+* 728d806 : nytt sql og json script
+* 0e801d6 : Endret booking til username
+* 0222e9d : Endret til utf8_encode
+* 22d854a : Commit endring
+* 88770be : La til oppdatert sql fil og json
+* 8c3eb87 : Slettet data.json
+*   200bf28 : merge
+|\  
+| *   61a556f : Merge remote-tracking branch 'origin/master'
+| |\  
+| | * 250d40f : jarra
+| * | 2b32656 : edringer
+| * | affecdd : dubbelbooking
+* | | c1924fc : pull
+| |/  
+|/|   
+* | 85c0f0a : La til gitignore fil
+* | 4761981 : Fikset mulighet for romvalg
+|/  
+* 57d36df : fikset feil
+*   f50407e : merge
+|\  
+| * cb6468e : Endringer
+* | 3f39cb7 : Fikset filtrering
+|/  
+*   c260876 : Merge branch 'master' of https://github.com/bim89/Iterativt-webprosjekt
+|\  
+| * 453f1d9 : logout endringer
+| * 2366e93 : Delete index.php
+* | af29636 : La til room size på td
+|/  
+* 797df07 : Lagt til mellomrom og rettet annen smårusk
+* 0ecadde : Visning av booking ved reservering
+* 28e20c3 : Pyntet og endret farge på bookinger til lyseblå
+* fcad6fc : Fikset feil i visning av bookinger
+* 442d941 : La til gitlog.txt
+* c5b76a6 : la til vinsing av Bookinger
+* a07e31c : Fikset bugs i loing.php og session
+* ac500cb : la til json i addBooking
+* 3619f21 : Nye endringer
+* 5db9d87 : Revert "la til endringer"
+* 3346668 : Lagt til Addboooking.php
+* 62c7369 : la til endringer
+*   67c53dd : Merge branch 'master' of https://github.com/bim89/Iterativt-webprosjekt
+|\  
+| * ceaf5fc : submit
+* | ed6e88c : La til mulighet for reservasjon
+|/  
+* 57da11c : updated sql script
+* 7815561 : Updated sql script
+* 92f0651 : Fikset header feil
+*   3d176ac : Merge branch 'master' of https://github.com/bim89/Iterativt-webprosjekt
+|\  
+| * 4bba91e : zzmooooth
+* | 2255807 : la til json fil
+|/  
+* 9ac626b : La til db tilgang i v2.php
+* 890721b : Updated
+*   e990896 : Merge branch 'master' of github.com:bim89/Iterativt-webprosjekt
+|\  
+| * 61ad6d6 : news
+* | fdb6636 : slettet index.html fil
+* | e7339cf : La til JS endringer og navn på index.html
+|/  
+*   8aa441c : Merge branch 'master' of github.com:bim89/Iterativt-webprosjekt
+|\  
+| * c75536f : Oppdatert
+| * 58be474 : Oppdatert
+| * a868ab2 : Ny kod i page-en
+| * 8b5604c : mappeStruktur
+| * 937ae08 : MappeStruktur
+* | 795d06f : Endret mappestrukter og la til endringer
+|/  
+* a8833d7 : La til endringer
+* 72d5c0c : lastet opp HTML-rammen
+* 6cb4661 : Login + DatabaseScript
+* e75c3b7 : Book.php med Date spørring som matcher databsen
+* c180961 : Ny Book.php fil lagt opp
+* b0a0fcc : Midlertidig innlogging, PHP, Mysql satt opp. Veldig basic uten PDO.
+* aefc0ca : sjekker om dette funker
+* 33a1c0f : Endret navn til readme.txt
+*   76cbaa1 : Merge branch 'master' of github.com:bim89/Iterativt-webprosjekt
+|\  
+| *   412db1e : nu kjør vi
+| |\  
+| | * 66ea20e : La til meg selv og mitt brukernavn
+| * | d50cd8e : Lagt til navnet mitt i lista. Håper dette funker.
+| |/  
+* | 01cc9e4 : Endret navn til readme.txt
+|/  
+* 4fbf667 : Intiial commit

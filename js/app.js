@@ -12,7 +12,6 @@ $("document").ready(function() {
 			});
 		}
 
-		console.log(weeknumber);
 		$(".weeknumber").html(weeknumber);	
 		$("td").each(function() {	
 			$(this).attr("data-week", weeknumber);
@@ -105,7 +104,6 @@ $("document").ready(function() {
 		$("td div").click(function(e) {
 				
 				var bookId = $(this).attr("data-bookid");
-				console.log(bookId);
 
 			if ($(this).hasClass("useraddBgTop")) {
 				var relX = e.pageX;
@@ -118,6 +116,10 @@ $("document").ready(function() {
 				$('#userBooking').show().css({
 					'top' : relY - 100,
 					'left' : relX + 10
+				});
+				
+				$(".avbrytBook").click(function() {
+					$('#userBooking').hide();
 				});
 				
 				$(".cancel").click(function() {
@@ -174,8 +176,6 @@ $("document").ready(function() {
 	
 		
 		$("td").on("click", function(e) {
-			
-			
 			
 			elem = this;
 			
@@ -242,12 +242,6 @@ $("document").ready(function() {
 			});
 			
 		});
-			
-		
-		function roomBook(elem, e) {
-
-			
-		}
 		
 		function jsonData() {
 		    var json = null;
