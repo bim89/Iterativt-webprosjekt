@@ -23,7 +23,7 @@ header {
 }
 
 #headTitle h1{
-	font-family: "Helvetica neue";
+	font-family: "Helvetica neue", Helvetica;
 	font-size:2.5em;
 	color: #fff;
 	margin-top: 22px;

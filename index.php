@@ -547,7 +547,7 @@ require "load.php";
 	</div>
 	
 	<div id="userBooking" style="display:none">
-		<h1>Rerserver Rom</h1>
+		<h1>Reserver Rom</h1>
 		<form method="POST" class="reserve">
 		<div class="select">	
 		Fra: 

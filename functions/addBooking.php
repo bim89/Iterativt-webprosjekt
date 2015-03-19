@@ -5,15 +5,19 @@
         require("dbconnect.php");
         
             $query = $db->prepare("SELECT * FROM Booking WHERE week = :week && weekday = :weekday && room_id = :roomid &&
-                                 (start_time BETWEEN :fromhour AND :tohour || stop_time BETWEEN :fromhour AND :tohour)");
+                                 (start_time BETWEEN :fromhour AND :hourAfter || stop_time BETWEEN :hourBefore AND :tohour)");
 
-			$checkHour = $tohour - 1;
-
+			// $hourBefore = $fromhour + 1;
+			$hourAfter = $tohour - 1;
+			$hourBefore = $fromhour + 1;
+			
             $query->bindParam(':week', $week);
             $query->bindParam(':weekday', $weekday);
             $query->bindParam(':fromhour', $fromhour);
-            $query->bindParam(':tohour', $checkHour);
+            $query->bindParam(':tohour', $tohour);
             $query->bindParam(':roomid', $roomid);
+            $query->bindParam(':hourAfter', $hourAfter);
+			$query->bindParam(':hourBefore', $hourBefore);
 
             $query->execute();
 
@@ -37,6 +41,8 @@
             $stmt->bindParam(':user', $user);
 
             $stmt->execute();
+
+            //sendmail();
 
             $stmt = $db->prepare("SELECT * FROM Booking");
             $stmt->execute();
