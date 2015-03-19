@@ -19,7 +19,7 @@ require('dbconnect.php');
         //Sjekker hvis brukernavn som bruker skrevet finnes i databasen
         $sql_query = "
                 SELECT 1
-                FROM Users
+                FROM users
                 WHERE username = :username";
 
         //lagrer :username variablen til spørringen
@@ -43,7 +43,7 @@ require('dbconnect.php');
 
         $sql_query = "
                 SELECT 1
-                FROM Users
+                FROM users
                 WHERE email = :email";
         $sql_parameters = array(
             ':email' => $_POST['email']
@@ -66,7 +66,7 @@ require('dbconnect.php');
 
 
         $secureQuery = "
-                INSERT INTO Users (
+                INSERT INTO users (
                 username,
                 password,
                 salt,
