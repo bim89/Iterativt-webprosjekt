@@ -154,6 +154,8 @@ $("document").ready(function() {
 		$("select[name='romnr']").change(function() {
 			var romid = $(this).val();
 			
+			$("select option[value='" + romid + "']").attr("selected","selected");
+			
 			$("td").each(function() {
 				$(this).attr("data-room", romid);
 				$(this).removeClass("booked");

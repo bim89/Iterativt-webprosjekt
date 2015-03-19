@@ -26,12 +26,12 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
 
     if($row){
         $check_pwd = hash('sha256', $_POST['password'] . $row['salt']);
-        for($round = 0; $round < 65536; $round++)
-        {
-            $check_pwd = hash('sha256', $check_pwd . $row['salt']);
-        }
+		for($round = 0; $round < 65536; $round++)
+		{
+			$check_pwd = hash('sha256', $check_pwd . $row['salt']);
+		}
 
-        if($check_pwd === $row['password'])
+        if($check_pwd == $row['password'])
         {
             $login = true;
         }
@@ -49,7 +49,6 @@ if(!empty($_POST["username"]) && !empty($_POST["password"]))
 
 
     }else{
-        print("Brukeren er enten ikke registrert eller feil brukernavn/passord!");
-
+        $msg = "Pålogging mislyktes, feil brukernavn/passord!";
     }
 }

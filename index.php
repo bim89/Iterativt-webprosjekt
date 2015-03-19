@@ -42,31 +42,30 @@ require "load.php";
 <head>
 	<meta charset="UTF8">
 	<title>Roombooking CK32</title>
-
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/screen.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 	<header>
+		<div class="content">
 		<div id="headTitle">
 			<h1>Westerdals</h1>
-			<p>Roombooking – CK32</p>
+			<h3>Roombooking – CK32</h3>
 		</div>
 
         <?php
         if (isset($_SESSION['user'])) {
         ?>
-            <div id="loginMessage">
-            <?php
-		echo 'Velkommen: ';
-        echo utf8_encode($_SESSION['user']['firstname']) . " " . utf8_encode($_SESSION['user']['lastname']);
-          ?>
-                <div id="loginform">
-                    <form method="post" action="index.php">
-                        <input type="hidden" value="" name="username" />
-                        <input type="hidden" value="logout" name="logout" />
-                        <input type="submit" value="Logout"/>
+        <div id="loginMessage">
+           <h3>
+		    <?= "Velkommen " . utf8_encode($_SESSION['user']['firstname']) . " " . utf8_encode($_SESSION['user']['lastname']); ?>
+			</h3>
+            <form style="float: left;" method="post" action="index.php">
+            	<input type="hidden" value="" name="username" />
+                <input type="hidden" value="logout" name="logout" />
+                <input id="logout" type="submit" value="Log ut"/>
 
                 <?php
                 if(isset($_POST['logout'])) {
@@ -74,13 +73,11 @@ require "load.php";
                     header("Location: index.php");
                 }
                 ?>
-            </form>
+          	</form>
+			</div>
         </div>
 		
-		<div id="weekbutton">
-			<a id="nextweek" href="#">Neste Uke</a>
-			<a id="lastweek" href="#">Forrige Uke</a>
-		</div>
+	
 		
         <?php
      } else {
@@ -93,23 +90,35 @@ require "load.php";
                 <input type="submit" value="Login" />
 			</form>
 
-	
+		</div>
     <?php } ?>
+		
 	</header>
 	<div class="clear"></div>
+	
+<?php 
+	if (isset($msg)) {
+
+		echo "<div id='alert'>" . $msg . "</div>";
+	}
+
+	?>	 
+
 	<div id="menu">
-		<h1>
-			Uke <span class="weeknumber"></span>
-		</h1>
-		
-		<div class="checkBooking">
-		<form method="POST" id="findRoom">
+		<div class="content">
+		<div id="checkBooking">
+			<form id="findRoom">
 			<div id="utstyr">
-				<h3>Utstyr</h3>
-				<input type="checkbox" name="prosejktor" value="1"/> Prosjektor
-				<input type="checkbox" name="whiteboard" value="1"/> Whiteboard
-				</div
+				<h3>Utstyr:</h3>
+				<div class="checkbox">
+					<input style="float:left;" type="checkbox" name="prosejktor" value="1"/> <h5 class="checkText">Prosjektor</h5>
+				</div>
+				<div class="checkbox">
+					<input style="float:left;" type="checkbox" name="whiteboard" value="1"/> <h5 class="checkText">Whiteboard</h5>
+				</div>
+			</div>
 			<div id="antPersoner">
+				<h3>Antall Personer:</h3>
 				<select name="personer">
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -118,8 +127,9 @@ require "load.php";
 					<option value="6">6</option>
 				</select>
 			</div>
+			</form>
 			<div id="romnr">
-			<h3>Rom nr</h3>
+				<h3>Rom nr:</h3>
 				<select name="romnr">
 					<option>Velg Rom</option>
 					<?php
@@ -129,15 +139,37 @@ require "load.php";
 					?>
 				</select>
 			</div>
-			</form>
+		
+	
+		</div>
 		</div>
 	</div>	
 	
 	<div class="clear"></div>
 
 	<section id="calender">
-		<div id="content">
+		<div class="content">
+			
+		<h1 id="week">
+			Uke <span class="weeknumber"></span>
+		</h1>
 		
+		<div id="weekbuttons">
+			<div id="lastweek"></div>
+			<div id="nextweek"></div>
+		</div>
+		
+		<div class="clear"></div>
+		<ul id="tid">
+			<li id="eight" class="timer">08:00</li>
+			<li id="nine"  class="timer">09:00</li>
+			<li id="ten"  class="timer">10:00</li>
+			<li id="elleven"  class="timer">11:00</li>
+			<li id="twelve"  class="timer">12:00</li>
+			<li id="thirteen"  class="timer">13:00</li>
+			<li id="fourteen"  class="timer">14:00</li>
+			<li id="fifteen"  class="timer">15:00</li>
+		</ul>
 			<table id="cal">
 				<tr>
 					<th>Mandag</th>
@@ -476,33 +508,8 @@ require "load.php";
 					<td class="tdbottom" style="border-right: none;"></td>
 				</tr>
 			</table>	
-			<div id="tid">
-					<div style="margin-top: 50px" class="timer">
-						<h5>08:00</h5>
-					</div>
-					<div style="margin-top: 54px" class="timer">
-						<h5>09:00</h5>
-					</div>
-					<div style="margin-top: 55px" class="timer">
-						<h5>10:00</h5>
-					</div>
-					<div style="margin-top: 53px" class="timer">
-						<h5>11:00</h5>
-					</div>
-					<div style="margin-top: 55px" class="timer">
-						<h5>12:00</h5>
-					</div>
-					<div style="margin-top: 54px" class="timer">
-						<h5>13:00</h5>
-					</div>
-					<div style="margin-top: 54px" class="timer">
-						<h5>14:00</h5>
-					</div>
-					<div style="margin-top: 55px" class="timer">
-						<h5>15:00</h5>
-					</div>
-				</div>
-			</div>
+			
+		
 		</div>
 	</section>
 
@@ -572,9 +579,11 @@ require "load.php";
 	</div>
 	
 	<script>
-	var weeknumber = <?php echo date("W") ?>,
-		username = "<?php echo $_SESSION["user"]["username"] ?>";
-		
+	
+	var weeknumber = <?= date("W") ?>;
+	<?php if (isset($_SESSION["user"])) { ?>
+	var	username = "<?= $_SESSION["user"]["username"] ?>";
+	<?php } ?>
 		console.log(weeknumber + " " + username);
 	</script>
 	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>

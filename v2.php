@@ -99,7 +99,7 @@ require "load.php";
 	<div class="clear"></div>
 	<div id="menu">
 		<h1>
-			Uke <span class="weeknumber"></span>
+			Uke <span class="weeknumber"></span> – <span class="curRom">Ingen Rom valgt</span>
 		</h1>
 		
 		<div class="checkBooking">

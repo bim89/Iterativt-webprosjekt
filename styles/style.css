@@ -26,19 +26,19 @@ header {
 	font-family: "Helvetica neue";
 	font-size:2.5em;
 	color: #fff;
-	margin-top: 15px;
-	margin-left: 80px;
+	margin-top: 17px;
 	margin-bottom: 0;
 	float: left;
 }
 
-#headTitle p {
+#headTitle h3 {
 	float: left;
 	color: #b7b1b1;
 	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	font-size: 1.4em;
 	margin-left: 30px;
-	margin-top: 30px;
+	margin-top: 33px;
+	font-weight: 100 !important;
 }
 
 #loginform {
@@ -46,8 +46,7 @@ header {
 }
 #loginform form{
     float: left;
-	margin-right: 80px;
-	margin-top: 25px;
+	margin-top: 20px;
 }
 input[type="submit"]{
 	color: #fff;
@@ -63,7 +62,7 @@ input[type="submit"]{
 
 input[type="button"]{
 	color: #fff;
-	font-family: "Helvetica Neue";
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	border: 2px;
 	border-radius: 5px;
 	padding: 6px 20px;
@@ -77,18 +76,79 @@ input[type="text"], input[type="password"] {
 	border-radius: 3px;
 }
 
+/******************** Header ********************/ 
+
 #menu {
-	margin-top: 50px;
-	width: 1523px;
-	margin: 50px auto;
+	background-color: #f1f1f1;
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	border-bottom: 1.5px solid #e0dddd;
 }
 
-#menu h1 {
+#checkBooking{
+	float: right;
+	margin-top: 18px;
+}
+
+#checkBooking h3 {
+	float: left;
+	font-size: 1.2em;
+	color: #6e6e6e;
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-weight: 200 !important;
+}
+
+#findRoom {float:left;}
+
+#utstyr {
 	float: left;
 }
 
-#menu form {
-	float: right;
+
+#utstyr .checkbox {
+	float: left;
+	margin-left: 10px;
+	margin-top: 8px;
+}
+
+.checkText {
+	color: #bdb8b8;
+	font-size: 1.1em;
+	float: left;
+	margin-left: 5px;
+	margin-top: -1px;
+
+}
+
+#antPersoner {
+	float: left;
+	margin-left: 20px;
+}
+
+
+
+#antPersoner select {
+	float: left;
+	margin-left: 10px;
+	width: 50px;
+	padding: 1px;
+	font-size: 0.8em;
+	margin-top: 3px;
+}
+
+#romnr {
+	float: left;
+	margin-left: 20px;
+}
+
+#romnr select {
+	float: left;
+	margin-left: 10px;
+	font-size: 0.8em !important;
+	padding: 1px;
+	width: 120px;
+	margin-top: 3px;
 }
 
 .reserver {
@@ -110,11 +170,11 @@ input[type=submit]:hover {
 }
 
 #calender {
-	margin-top: 30px;
+	margin-top: 50px;
 }
 
-#content {
-	width: 1523px;
+.content {
+	width: 1480px;
 	margin: 0 auto;
 	height: 100px;
 }
@@ -127,22 +187,28 @@ input[type=submit]:hover {
 }
 
 #tid {
-	position: absolute;
-	top: 142px;
-	left: 85px;
+	float: left;
+	list-style-type: none;
 	/*margin-top: -500px;*/
 	z-index: 100;
-	margin-top: 130px;
+	margin-top: 67px;
 	color: #989898;
+	margin-right: 10px;
 }
 
+.timer {
+	font-family: "Helvetica";
+	margin-top: 52px;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.timer:first-child {
+	margin-top: 50px;
+}
 
 .mon {
 	background-color: #000;
-}
-
-.timer h5 {
-	font-family: "Helvetica";
 }
 
 #dager {
@@ -155,6 +221,8 @@ table {
 	border-collapse: collapse;
 	margin: 0 auto;
 	table-layout:fixed;
+	margin-top: 37px;
+	float: left;
 }
 
 th {
@@ -163,7 +231,7 @@ th {
 }
 
 td {
-	width: 200px;
+	width: 202px;
 	height: 65px;
 	border: 2px solid #d2d2d2;
 	margin: 0;
@@ -379,10 +447,6 @@ td .useraddBgTop h5 {
 	margin-top: 30px;
 	margin-left: 35px;
 }
-select {
-	width: 110px;
-	font-size: 1.0em;
-}
 
 .tdbottom {
 	border-bottom: none;
@@ -401,20 +465,59 @@ select {
 }
 #loginMessage {
     float: right;
-	margin-right: 80px;
+}
+
+#loginMessage h3 {
+	float: left;
 	color: #b7b1b1;
-	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	font-size: 1.4em;
-	font-weight: 100;
-	margin-top: 10px;
+	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+	font-weight: 100 !important;
+	margin-right: 20px;
+	margin-top: 30px;
 }
 
-#romnr {
+#week {
 	float: left;
-	margin-right: 40px;
+	font-size: 2.1em;
 }
 
-#utstyr {
+#week h1 {
+	
+}
+
+#weekbuttons {
+	float: right;
+}
+
+#lastweek {
+	background-image: url("../img/arrow-left.png");
+	height: 24px;
+	width: 28px;
+	cursor: pointer;
+	float: left;
+	margin-right: 5px;
+}
+
+#lastweek:hover{background-image: url("../img/arrow-left-hover.png");}
+
+#nextweek {
+	background-image: url("../img/arrow-right.png");
+	height: 24px;
+	width: 28px;
+	cursor: pointer;
 	float: left;
 }
+
+#nextweek:hover{background-image: url("../img/arrow-right-hover.png");}
+
+
+
+#logout {
+	float: left;
+	margin-top: 25px;
+	background-color: #974f4f;
+}
+
+#logout:hover {background-color: #911818; cursor: pointer;}
 
