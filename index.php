@@ -41,7 +41,7 @@ require "load.php";
 <html>
 <head>
 	<meta charset="UTF8">
-	<title>Roombooking CK32</title>
+	<title>Rombooking CK32</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/screen.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -52,7 +52,7 @@ require "load.php";
 		<div class="content">
 		<div id="headTitle">
 			<h1>Westerdals</h1>
-			<h3>Roombooking – CK32</h3>
+			<h3>Rombooking – CK32</h3>
 		</div>
 
         <?php
@@ -65,7 +65,7 @@ require "load.php";
             <form style="float: left;" method="post" action="index.php">
             	<input type="hidden" value="" name="username" />
                 <input type="hidden" value="logout" name="logout" />
-                <input id="logout" type="submit" value="Log ut"/>
+                <input id="logout" type="submit" value="Logg ut"/>
 
                 <?php
                 if(isset($_POST['logout'])) {

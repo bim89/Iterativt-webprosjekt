@@ -191,11 +191,16 @@ $("document").ready(function() {
 			
 			var relX = e.pageX;
 			var relY = e.pageY;
-
-			$('#booking').show().css({
-				'top' : relY,
-				'left' : relX + 10
-			});
+			
+			if ($(elem).attr("data-room")) {
+				$('#booking').show().css({
+					'top' : relY,
+					'left' : relX + 10
+				});
+			} else {
+				alert("Ingen rom valgt, velg ett rom!");
+				changeBg();
+			}
 			
 			$(".avbryt").click(function(elem) {
 				$("#booking").hide();
