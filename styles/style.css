@@ -18,6 +18,13 @@ header {
 	height: 70px;
 }
 
+#logo {
+	float: left;
+	height:50px;
+	margin-top: 15px;
+	margin-left: 0px;
+}
+
 #headTitle {
 	float: left;
 }
@@ -26,7 +33,9 @@ header {
 	font-family: "Helvetica neue", Helvetica;
 	font-size:2.5em;
 	color: #fff;
-	margin-top: 22px;
+	margin-top: 20px;
+	margin-left: 10px;
+	font-weight: 500 !important;
 	margin-bottom: 0;
 	float: left;
 }
@@ -37,7 +46,7 @@ header {
 	font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	font-size: 1.4em;
 	margin-left: 17px;
-	margin-top: 39px;
+	margin-top: 37px;
 	font-weight: 100 !important;
 }
 
@@ -241,10 +250,10 @@ td {
 }
 
 .addBgTop {
-	background-color: #a0e0f9;
+	background-color: #6dcff6;
 	width: 100%;
 	height: 67px;
-	opacity: 0.85;
+	opacity: 0.75;
 	margin-top: -6px;
 	padding-top: 2px;
 	margin-left: -2px;
@@ -256,14 +265,14 @@ td {
 
 
 .addBgBetween {
-	background-color: #a0e0f9;
+	background-color: #6dcff6;
 	border: 2px solid #4496b6;
 	margin-left: -2px;
 	margin-top: 0px;
 	padding-top: 2px;
 	width: 100%;
 	height: 65px;
-	opacity: 0.85;
+	opacity: 0.75;
 	margin-bottom: -11px;
 	border-top: none;
 	border-bottom: none;
@@ -273,11 +282,11 @@ td {
 
 
 .addBgBottom {
-	background-color: #a0e0f9;
+	background-color: #6dcff6;
 	border: 2px solid #4496b6;
 	width: 100%;
 	height: 100%;
-	opacity: 0.85;
+	opacity: 0.75;
 	margin-left: -2px;
 	margin-top: 8px;
 	padding-top: 2px;
@@ -489,6 +498,7 @@ td .useraddBgTop h5 {
 
 #weekbuttons {
 	float: right;
+	margin-top: 10px;
 }
 
 #lastweek {
@@ -526,7 +536,7 @@ td .useraddBgTop h5 {
 
 #logout {
 	float: left;
-	margin-top: 30px;
+	margin-top: 29px;
 	background-color: #974f4f;
 }
 

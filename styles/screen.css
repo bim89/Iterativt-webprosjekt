@@ -164,11 +164,17 @@
 	#headTitle h1 {
 		margin-top: 10px;
 		font-size: 1.8em;
+		font-weight: 400 !important;
 	}
 	
 	#headTitle h3 {
 		font-size: 1.1em;
 		margin-top: 22px;
+	}
+	
+	#logo {
+		margin-top: 11;
+		height: 30px;
 	}
 	
 	#loginMessage h3 {

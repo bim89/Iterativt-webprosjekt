@@ -44,12 +44,15 @@ require "load.php";
 	<title>Rombooking CK32</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/screen.css">
+	<link rel="icon" type="image/png" href="http://www.westerdals.no/content/themes/westerdals/assets/images/favicon.png">
 	<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 	<header>
 		<div class="content">
+			<img id="logo" src="img/WACT_hvit_cmyk.png" alt="logo" />
+			
 		<div id="headTitle">
 			<h1>Westerdals</h1>
 			<h3>Rombooking – CK32</h3>
